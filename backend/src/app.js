@@ -9,7 +9,7 @@ dotenv.config();
 connectDB();
 
 const corsOptions = {
-    origin: ['*','http://103.191.51.232:3000'],
+    origin: ['http://103.191.51.232:3000','http://localhost:3000','http://103.191.51.232'],
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
   };
   
