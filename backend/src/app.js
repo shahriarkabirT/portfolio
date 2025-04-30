@@ -10,10 +10,17 @@ dotenv.config();
 connectDB();
 
 const corsOptions = {
+<<<<<<< HEAD
     origin: ['http://103.191.51.232:3000','http://localhost:3000','http://103.191.51.232'],
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
   };
   
+=======
+    origin: ['*','http://localhos:3000','http://103.191.51.232:3000','http://103.191.51.232','https://shahriarkabir.xyz'],
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  };
+
+>>>>>>> 84d90c9d7c4754e07214029faf8397c8ec2ed5ff
 const app = express();
 
 app.use(cors(corsOptions));
