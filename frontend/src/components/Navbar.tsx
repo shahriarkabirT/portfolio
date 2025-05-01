@@ -66,8 +66,7 @@ export default function Navbar() {
 
             {/* Resume Button */}
             <a
-              href="shahrarkabir_resume.pdf" // Path to the resume in the public folder
-              download="ShahriarKabir_Resume.pdf" // Optional: Rename the file when downloaded
+              href="/shahriarkabir.pdf" // Path to the resume in the public folder // Optional: Rename the file when downloaded
               className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200"
             >
               Resume
@@ -131,7 +130,8 @@ export default function Navbar() {
               </a>
             ))}
             <a
-              href="#resume"
+              href="/shahriarkabir.pdf" // Path to the resume in the public folder // Optional: Rename the file when downloaded
+              download
               className="bg-blue-600 hover:bg-blue-700 text-white block px-3 py-2 rounded-md text-base font-medium"
               onClick={() => setIsOpen(false)}
             >
