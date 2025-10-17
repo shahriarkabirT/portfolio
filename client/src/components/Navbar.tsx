@@ -1,10 +1,12 @@
 "use client";
 import { useState, useEffect } from "react";
 import { Menu, X, Code, Github, Linkedin, Mail } from "lucide-react";
+import { useTheme } from "@/app/ThemeProvider";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -72,7 +74,7 @@ export default function Navbar() {
               Resume
             </a>
           </div>
-
+<div className="hidden md:flex items-center space-x-4">
           {/* Social Icons - Desktop */}
           <div className="hidden md:flex items-center space-x-4">
             <a
@@ -111,6 +113,14 @@ export default function Navbar() {
                 <Menu className="h-6 w-6" />
               )}
             </button>
+             <button
+        onClick={toggleTheme}
+        className="ml-4 px-3 py-1 rounded bg-gray-700 text-white hover:bg-gray-600 transition"
+        aria-label="Toggle dark mode"
+      >
+        {theme === "dark" ? "🌙" : "☀️"}
+      </button>
+      </div>
           </div>
         </div>
       </div>
