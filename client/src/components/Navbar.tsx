@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X, Code, Github, Linkedin, Mail } from "lucide-react";
 import { useTheme } from "@/app/ThemeProvider";
+import Link from "next/link";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -30,7 +31,7 @@ export default function Navbar() {
     { name: "Projects", href: "/projects" },
     { name: "Skills", href: "/skills" },
     { name: "Experience", href: "/work-experience" },
-    { name: "Blog", href: "#blog" },
+    { name: "Blog", href: "/blog" },
     { name: "Contact", href: "/contact" },
     { name: "My Services", href: "/services" },
     { name: "About Me", href: "/about" },
@@ -57,13 +58,13 @@ export default function Navbar() {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
-              <a
+              <Link
                 key={item.name}
                 href={item.href}
                 className="text-gray-300 hover:text-blue-500 px-2 py-1 text-sm font-medium transition-colors duration-200"
               >
                 {item.name}
-              </a>
+              </Link>
             ))}
 
             {/* Resume Button */}
