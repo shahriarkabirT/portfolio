@@ -2,18 +2,16 @@ import BlogCard from "@/components/BlogCard";
 
 export default function TechBlogPage() {
   const blogPosts = [
-    {   
+    {
       id: 1,
       title: "The Complete Guide to VPS Hosting for MERN stack project",
-      description:
-        "Learn how to host you mern with next js website in the vps",
+      description: "Learn how to host you mern with next js website in the vps",
       category: "VPS Hosting",
       readTime: "15 min read",
       date: "Oct 15, 2025",
       image:
         "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=250&fit=crop",
       link: "/blog/vps/vps-hosting-guide-for-mern",
-
     },
     {
       id: 2,
@@ -53,6 +51,18 @@ export default function TechBlogPage() {
     },
     {
       id: 5,
+      title: "Virtual Memory and Swap Space in VPS",
+      description:
+        "Essential guide for managing memory on low-RAM VPS instances, including swap space setup and optimization techniques.",
+      category: "VPS Hosting",
+      readTime: "8 min read",
+      date: "Oct 9, 2025",
+      image:
+        "https://images.unsplash.com/photo-1599507593499-a3f7d7d97667?w=400&h=250&fit=crop",
+      link: "/blog/vps/virtual-memory",
+    },
+    {
+      id: 6,
       title: "Understanding Cloud Computing: AWS vs Azure vs GCP",
       description:
         "An in-depth analysis of the three major cloud platforms to help you make an informed decision for your business.",
@@ -64,7 +74,7 @@ export default function TechBlogPage() {
       link: "/blog/cloud-platforms-comparison",
     },
     {
-      id: 6,
+      id: 7,
       title: "Database Optimization Techniques for High Traffic",
       description:
         "Master database performance tuning with advanced indexing, query optimization, and caching strategies.",
@@ -76,7 +86,7 @@ export default function TechBlogPage() {
       link: "/blog/database-optimization",
     },
     {
-      id: 7,
+      id: 8,
       title: "CI/CD Pipeline Best Practices for Modern Development",
       description:
         "Build robust continuous integration and deployment workflows that accelerate your software delivery.",
@@ -88,7 +98,7 @@ export default function TechBlogPage() {
       link: "/blog/cicd-best-practices",
     },
     {
-      id: 8,
+      id: 9,
       title: "Microservices Architecture: A Practical Guide",
       description:
         "Learn how to design, implement, and scale microservices-based applications effectively.",
@@ -100,7 +110,7 @@ export default function TechBlogPage() {
       link: "/blog/microservices-guide",
     },
     {
-      id: 9,
+      id: 10,
       title: "Web Performance Optimization: Speed Up Your Site",
       description:
         "Proven techniques to improve website loading times, reduce bounce rates, and enhance user experience.",
@@ -112,7 +122,7 @@ export default function TechBlogPage() {
       link: "/blog/web-performance",
     },
     {
-      id: 10,
+      id: 11,
       title: "API Design Best Practices: RESTful vs GraphQL",
       description:
         "Compare different API design approaches and learn when to use REST or GraphQL for your projects.",
@@ -227,8 +237,6 @@ export default function TechBlogPage() {
           </div>
         </section>
       </main>
-
-
     </div>
   );
 }
