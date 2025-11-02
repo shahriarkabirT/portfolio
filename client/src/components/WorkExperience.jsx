@@ -68,10 +68,30 @@ const WorkExperience = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
-          className="text-4xl md:text-5xl font-bold text-white mb-12 text-center"
+          className="text-4xl md:text-5xl font-bold text-white mb-8 text-center"
         >
           Professional <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-500">Experience</span>
         </motion.h2>
+        
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          viewport={{ once: true }}
+          className="flex justify-center mb-12"
+        >
+          <a 
+            href="https://www.fiverr.com/s/0bxz8Vk" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="group relative px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-lg font-semibold text-white shadow-lg hover:shadow-blue-500/50 transition-all duration-300 hover:scale-105"
+          >
+            <span className="flex items-center gap-2">
+              Hire Me on Fiverr
+              <ExternalLink className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </span>
+          </a>
+        </motion.div>
         
         <div className="space-y-8">
           {workExperiences.map((experience, index) => (

@@ -1,3 +1,5 @@
+import { ExternalLink } from "lucide-react";
+
 export default function VPSHostingTutorial() {
   const steps = [
     {
@@ -533,8 +535,30 @@ export default function VPSHostingTutorial() {
               View More Tutorials
             </button>
           </div>
+
+
+                <div className="mt-16">
+
+        <div
+                  className="flex justify-center mb-12"
+                >
+                  <a 
+                    href="https://www.fiverr.com/s/Ayeo8r4" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="group relative px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-lg font-semibold text-white shadow-lg hover:shadow-blue-500/50 transition-all duration-300 hover:scale-105"
+                  >
+                    <span className="flex items-center gap-2">
+                      Hire Me on Fiverr
+                      <ExternalLink className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                    </span>
+                  </a>
+                </div>
+              </div>
         </section>
       </main>
+
+      
 
       {/* Footer */}
       <footer className="bg-black bg-opacity-50 backdrop-blur-md border-t border-gray-800 mt-20">

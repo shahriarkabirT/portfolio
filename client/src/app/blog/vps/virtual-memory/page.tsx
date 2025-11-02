@@ -1,3 +1,4 @@
+import { ExternalLink } from "lucide-react";
 import React from "react";
 
 export default function BlogArticle() {
@@ -108,6 +109,25 @@ echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab`}
           {/* You can continue adding Optimization, Swap Management, Best Practices, Workflow, etc. */}
         </div>
       </article>
+
+      <div className="mt-16">
+
+        <div
+                  className="flex justify-center mb-12"
+                >
+                  <a 
+                    href="https://www.fiverr.com/s/Ayeo8r4" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="group relative px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-lg font-semibold text-white shadow-lg hover:shadow-blue-500/50 transition-all duration-300 hover:scale-105"
+                  >
+                    <span className="flex items-center gap-2">
+                      Hire Me on Fiverr
+                      <ExternalLink className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                    </span>
+                  </a>
+                </div>
+              </div>
     </main>
   );
 }

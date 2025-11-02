@@ -1,7 +1,7 @@
 "use client";
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Briefcase, Rocket, Code, School, Award } from 'lucide-react';
+import { Briefcase, Rocket, Code, School, Award, ExternalLink } from 'lucide-react';
 
 const AboutMe = () => {
   return (
@@ -118,9 +118,32 @@ const AboutMe = () => {
                   </div>
                 </div>
               </div>
+              
             </div>
           </motion.div>
         </div>
+        <div className="mt-16">
+
+        <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.2 }}
+                  viewport={{ once: true }}
+                  className="flex justify-center mb-12"
+                >
+                  <a 
+                    href="https://www.fiverr.com/s/0bxz8Vk" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="group relative px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-lg font-semibold text-white shadow-lg hover:shadow-blue-500/50 transition-all duration-300 hover:scale-105"
+                  >
+                    <span className="flex items-center gap-2">
+                      Hire Me on Fiverr
+                      <ExternalLink className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                    </span>
+                  </a>
+                </motion.div>
+              </div>
       </div>
     </section>
   );

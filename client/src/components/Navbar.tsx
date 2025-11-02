@@ -79,7 +79,7 @@ export default function Navbar() {
           {/* Social Icons - Desktop */}
           <div className="hidden md:flex items-center space-x-4">
             <a
-              href="https://github.com"
+              href="https://github.com/shahriarkabirT"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-white"
@@ -87,7 +87,7 @@ export default function Navbar() {
               <Github className="h-5 w-5" />
             </a>
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/shahriarkabirtasin"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-white"
@@ -95,7 +95,7 @@ export default function Navbar() {
               <Linkedin className="h-5 w-5" />
             </a>
             <a
-              href="mailto:contact@example.com"
+              href="mailto:shahriarkabir078@gmail.com"
               className="text-gray-400 hover:text-white"
             >
               <Mail className="h-5 w-5" />
@@ -153,7 +153,7 @@ export default function Navbar() {
           {/* Social Icons - Mobile */}
           <div className="flex justify-center space-x-6 pt-4 pb-6 border-t border-gray-700">
             <a
-              href="https://github.com"
+              href="https://github.com/shahriarkabirT"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-white"
@@ -161,7 +161,7 @@ export default function Navbar() {
               <Github className="h-6 w-6" />
             </a>
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/shahriarkabirtasin/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-white"
@@ -169,7 +169,7 @@ export default function Navbar() {
               <Linkedin className="h-6 w-6" />
             </a>
             <a
-              href="mailto:contact@example.com"
+              href="mailto:shahriarkabir078@gmail.com"
               className="text-gray-400 hover:text-white"
             >
               <Mail className="h-6 w-6" />
