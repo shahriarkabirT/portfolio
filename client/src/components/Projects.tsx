@@ -8,69 +8,70 @@ export default function ProjectsSection({ limit }: { limit?: number }) {
   const projects = [
     {
       id: 1,
-      title: "Vidyamayee Government Girls Highschool Portal",
-      description: "Official web portal for Vidyamayee Government Girls Highschool with authentication, notice management, and media uploads.",
-      image: "vidyamayee.png",
+      title: "Okobiz Property Platform",
+      description: "Real estate property listing and management platform developed under team leadership at Okobiz.",
+      image: "/api/placeholder/800/500",
       category: "web",
-      stack: ["MERN", "React", "Node.js", "Express", "MongoDB"],
-      link: "https://vidyamayee.edu.bd",
-      date: "Dec 2024 - Feb 2025",
+      stack: ["React", "Node.js", "Express", "MongoDB"],
+      link: "https://okobizproperty.com",
+      date: "2024",
       features: [
-        "Authentication system",
-        "Notice, Image, Video Uploads",
-        "Dynamic Information Update",
-        "Admin Dashboard"
+        "Property listings management",
+        "Search and filtering system",
+        "User authentication",
+        "Property details and media gallery",
+        "Team collaboration features"
       ]
     },
     {
       id: 2,
-      title: "Vidyamayee Result Processing Website",
-      description: "Comprehensive result management system for educational institution with document generation and bulk data processing.",
-      image: "result_vidyamayee.png",
+      title: "All Age Fashion E-commerce",
+      description: "Modern e-commerce platform for fashion retail with complete shopping experience and product management.",
+      image: "/api/placeholder/800/500",
       category: "web",
-      stack: ["MERN", "React", "Node.js", "Express", "MongoDB"],
-      link: "https://result.vidyamayee.edu.bd",
-      date: "Dec 2024 - Feb 2025",
+      stack: ["React", "Next.js", "Node.js", "MongoDB"],
+      link: "https://all-agefashion.com",
+      date: "2024",
       features: [
-        "ID card, Testimonial, Marksheet and Result Generator",
-        "Tabulation system",
-        "Dynamic Information Update",
-        "Student Profile management",
-        "Bulk Information Upload via Sheets"
+        "Product catalog with categories",
+        "Shopping cart and checkout",
+        "User accounts and order history",
+        "Payment integration",
+        "Inventory management"
       ]
     },
     {
       id: 3,
-      title: "Urbangent E-commerce",
-      description: "Enhanced version of e-commerce platform with complete functionality and modern tech stack.",
-      image: "urbargent.png",
+      title: "Al Arabia Carbon Business Portfolio",
+      description: "Professional business portfolio website showcasing company services and carbon solutions.",
+      image: "/api/placeholder/800/500",
       category: "web",
-      stack: ["React JS", "Redux", "Redux Toolkit", "Next JS", "Node JS", "Express JS", "MongoDB"],
-      link: "https://urbargent.vercel.app",
-      github: "https://github.com/shahriarkabirT/urbangent",
-      date: "Aug 2024 - Nov 2024",
+      stack: ["React", "Next.js", "Tailwind CSS"],
+      link: "https://alarabiacarbon.com",
+      date: "2024",
       features: [
-        "User authentication and profiles",
-        "Product catalog and search",
-        "Shopping cart and checkout",
-        "Order management",
-        "Admin dashboard"
+        "Company profile showcase",
+        "Services presentation",
+        "Contact and inquiry forms",
+        "Responsive design",
+        "SEO optimization"
       ]
     },
     {
       id: 4,
-      title: "ElevateMart E-commerce",
-      description: "Full-featured e-commerce web application built during internship at CodeElevate Tech.",
-      image: "elevatemart.png",
+      title: "Nikki Banana Powder Business Website",
+      description: "Business website for banana powder products with information and ordering capabilities.",
+      image: "/api/placeholder/800/500",
       category: "web",
-      stack: ["React JS", "Redux", "Redux Toolkit", "Next JS", "Node JS", "Express JS", "MongoDB", "RESTful API"],
-      date: "May 2024 - Aug 2024",
+      stack: ["React", "Next.js", "Tailwind CSS"],
+      link: "https://nikkibananapowder.com",
+      date: "2024",
       features: [
-        "Complete e-commerce functionality",
-        "User authentication",
-        "Product management",
-        "Shopping cart",
-        "Order processing"
+        "Product information display",
+        "Business overview",
+        "Contact and order forms",
+        "Mobile-responsive layout",
+        "Fast loading performance"
       ]
     },
     {
@@ -92,6 +93,73 @@ export default function ProjectsSection({ limit }: { limit?: number }) {
     },
     {
       id: 6,
+      title: "Vidyamayee Government Girls Highschool Portal",
+      description: "Official web portal for Vidyamayee Government Girls Highschool with authentication, notice management, and media uploads.",
+      image: "vidyamayee.png",
+      category: "web",
+      stack: ["MERN", "React", "Node.js", "Express", "MongoDB"],
+      link: "https://vidyamayee.edu.bd",
+      date: "Dec 2024 - Feb 2025",
+      features: [
+        "Authentication system",
+        "Notice, Image, Video Uploads",
+        "Dynamic Information Update",
+        "Admin Dashboard"
+      ]
+    },
+    {
+      id: 7,
+      title: "Vidyamayee Result Processing Website",
+      description: "Comprehensive result management system for educational institution with document generation and bulk data processing.",
+      image: "result_vidyamayee.png",
+      category: "web",
+      stack: ["MERN", "React", "Node.js", "Express", "MongoDB"],
+      link: "https://result.vidyamayee.edu.bd",
+      date: "Dec 2024 - Feb 2025",
+      features: [
+        "ID card, Testimonial, Marksheet and Result Generator",
+        "Tabulation system",
+        "Dynamic Information Update",
+        "Student Profile management",
+        "Bulk Information Upload via Sheets"
+      ]
+    },
+    {
+      id: 8,
+      title: "Urbangent E-commerce",
+      description: "Enhanced version of e-commerce platform with complete functionality and modern tech stack.",
+      image: "urbargent.png",
+      category: "web",
+      stack: ["React JS", "Redux", "Redux Toolkit", "Next JS", "Node JS", "Express JS", "MongoDB"],
+      link: "https://urbargent.vercel.app",
+      github: "https://github.com/shahriarkabirT/urbangent",
+      date: "Aug 2024 - Nov 2024",
+      features: [
+        "User authentication and profiles",
+        "Product catalog and search",
+        "Shopping cart and checkout",
+        "Order management",
+        "Admin dashboard"
+      ]
+    },
+    {
+      id: 9,
+      title: "ElevateMart E-commerce",
+      description: "Full-featured e-commerce web application built during internship at CodeElevate Tech.",
+      image: "elevatemart.png",
+      category: "web",
+      stack: ["React JS", "Redux", "Redux Toolkit", "Next JS", "Node JS", "Express JS", "MongoDB", "RESTful API"],
+      date: "May 2024 - Aug 2024",
+      features: [
+        "Complete e-commerce functionality",
+        "User authentication",
+        "Product management",
+        "Shopping cart",
+        "Order processing"
+      ]
+    },
+    {
+      id: 10,
       title: "Audio GuestBook",
       description: "Innovative digital guestbook that allows visitors to record audio messages instead of written notes.",
       image: "audio.png",
@@ -106,7 +174,7 @@ export default function ProjectsSection({ limit }: { limit?: number }) {
       ]
     },
     {
-      id: 7,
+      id: 11,
       title: "Attendance Management System using Face Recognition",
       description: "Advanced attendance tracking system using facial recognition with anti-spoofing measures.",
       image: "/api/placeholder/800/500",
