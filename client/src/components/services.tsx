@@ -2,6 +2,7 @@
 import React from 'react';
 import { Globe, Shield, ShoppingCart, Code, Server, BookOpen, GraduationCap } from 'lucide-react';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 const Services = () => {
   const services = [
@@ -15,7 +16,8 @@ const Services = () => {
         "E-commerce Solutions",
         "API Development"
       ],
-      cta: "Learn more"
+      cta: "Learn more",
+      link: "/services/web-development"
     },
     {
       category: "Education Solutions",
@@ -26,7 +28,8 @@ const Services = () => {
         "Result Processing",
         "Educational Smart Website"
       ],
-      cta: "Learn more"
+      cta: "Learn more",
+      link: "/services/education-solutions"
     },
     {
       category: "Hosting Services",
@@ -38,7 +41,8 @@ const Services = () => {
         "Cloud Hosting (Windows)",
         "Cloud Hosting (Linux)"
       ],
-      cta: "Learn more"
+      cta: "Learn more",
+      link: "/services/hosting-services"
     }
   ];
 
@@ -92,13 +96,13 @@ const Services = () => {
                     </li>
                   ))}
                 </ul>
-                
-                <button className="mt-auto w-full py-2 px-4 bg-gradient-to-r from-indigo-600 to-blue-600 hover:from-indigo-700 hover:to-blue-700 text-white rounded-lg transition-all duration-300 flex items-center justify-center">
+
+                <Link href={service.link} className="mt-auto w-full py-2 px-4 bg-gradient-to-r from-indigo-600 to-blue-600 hover:from-indigo-700 hover:to-blue-700 text-white rounded-lg transition-all duration-300 flex items-center justify-center">
                   {service.cta}
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
-                </button>
+                </Link>
               </div>
             </motion.div>
           ))}
