@@ -10,21 +10,10 @@ export default function Navbar() {
   const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 20) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
-    };
-
+    const handleScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
 
   const navItems = [
     { name: "Home", href: "/" },
@@ -46,13 +35,11 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <div className="flex items-center">
-            <div className="flex-shrink-0 flex items-center space-x-2">
-              <Code className="h-8 w-8 text-blue-500" />
-              <span className="text-xl font-bold text-white">
-                Dev<span className="text-blue-500">Portfolio</span>
-              </span>
-            </div>
+          <div className="flex items-center space-x-2">
+            <Code className="h-8 w-8 text-blue-500" />
+            <span className="text-xl font-bold text-white">
+              Dev<span className="text-blue-500">Portfolio</span>
+            </span>
           </div>
 
           {/* Desktop Navigation */}
@@ -66,92 +53,74 @@ export default function Navbar() {
                 {item.name}
               </Link>
             ))}
-
-            {/* Resume Button */}
-            <a
-              href="/shahriarkabir.pdf" // Path to the resume in the public folder // Optional: Rename the file when downloaded
-              className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200"
-            >
-              Resume
-            </a>
-          </div>
-<div className="hidden md:flex items-center space-x-4">
-          {/* Social Icons - Desktop */}
-          <div className="hidden md:flex items-center space-x-4">
-            <a
-              href="https://github.com/shahriarkabirT"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-400 hover:text-white"
-            >
-              <Github className="h-5 w-5" />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/shahriarkabirtasin"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-400 hover:text-white"
-            >
-              <Linkedin className="h-5 w-5" />
-            </a>
-            <a
-              href="mailto:shahriarkabir078@gmail.com"
-              className="text-gray-400 hover:text-white"
-            >
-              <Mail className="h-5 w-5" />
-            </a>
           </div>
 
-          {/* Mobile menu button */}
-          <div className="md:hidden flex items-center">
+          {/* Right Side: Theme + Socials + Menu */}
+          <div className="flex items-center space-x-4">
+            {/* Theme Toggle */}
             <button
-              onClick={toggleMenu}
-              className="text-gray-400 hover:text-white focus:outline-none"
+              onClick={toggleTheme}
+              className="px-3 py-1 rounded bg-gray-700 text-white hover:bg-gray-600 transition text-sm"
+              aria-label="Toggle dark mode"
             >
-              {isOpen ? (
-                <X className="h-6 w-6" />
-              ) : (
-                <Menu className="h-6 w-6" />
-              )}
+              {theme === "dark" ? "🌙" : "☀️"}
             </button>
-             <button
-        onClick={toggleTheme}
-        className="ml-4 px-3 py-1 rounded bg-gray-700 text-white hover:bg-gray-600 transition"
-        aria-label="Toggle dark mode"
-      >
-        {theme === "dark" ? "🌙" : "☀️"}
-      </button>
-      </div>
+
+            {/* Social Icons (Desktop only) */}
+            <div className="hidden md:flex items-center space-x-4">
+              <a
+                href="https://github.com/shahriarkabirT"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-white"
+              >
+                <Github className="h-5 w-5" />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/shahriarkabirtasin"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-white"
+              >
+                <Linkedin className="h-5 w-5" />
+              </a>
+              <a
+                href="mailto:shahriarkabir078@gmail.com"
+                className="text-gray-400 hover:text-white"
+              >
+                <Mail className="h-5 w-5" />
+              </a>
+            </div>
+
+            {/* Mobile Menu Button */}
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="md:hidden text-gray-400 hover:text-white focus:outline-none"
+            >
+              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            </button>
           </div>
         </div>
       </div>
 
-      {/* Mobile menu */}
+      {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden bg-gray-800">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+        <div className="md:hidden bg-gray-800 border-t border-gray-700">
+          <div className="px-2 pt-3 pb-4 space-y-1">
             {navItems.map((item) => (
-              <a
+              <Link
                 key={item.name}
                 href={item.href}
-                className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                className="block text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-base font-medium"
                 onClick={() => setIsOpen(false)}
               >
                 {item.name}
-              </a>
+              </Link>
             ))}
-            <a
-              href="/shahriarkabir.pdf" // Path to the resume in the public folder // Optional: Rename the file when downloaded
-              download
-              className="bg-blue-600 hover:bg-blue-700 text-white block px-3 py-2 rounded-md text-base font-medium"
-              onClick={() => setIsOpen(false)}
-            >
-              Resume
-            </a>
           </div>
 
           {/* Social Icons - Mobile */}
-          <div className="flex justify-center space-x-6 pt-4 pb-6 border-t border-gray-700">
+          <div className="flex justify-center space-x-6 py-4 border-t border-gray-700">
             <a
               href="https://github.com/shahriarkabirT"
               target="_blank"
