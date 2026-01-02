@@ -11,7 +11,7 @@ export default function HeroSection() {
 
   const phrases = [
     "Full Stack Developer",
-    "React Specialist",
+    "DevOps Engineer",
     "App Developer",
     "Web Developer",
     "Problem Solver",
