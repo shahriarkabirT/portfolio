@@ -1,4 +1,4 @@
-"'use client';"
+"'use client';";
 import { Check, Copy } from "lucide-react";
 import { ReactNode, useState } from "react";
 
