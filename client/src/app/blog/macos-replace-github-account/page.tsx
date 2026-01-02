@@ -1,5 +1,5 @@
-import React, { useState, ReactNode } from 'react';
-import { Copy, Check } from 'lucide-react';
+import { Check, Copy } from "lucide-react";
+import { ReactNode, useState } from "react";
 
 interface CommandBlockProps {
   command: string;
@@ -76,7 +76,7 @@ export default function GitHubSwitchGuide() {
             description="First, check which credential helper you're currently using:"
             command="git config --global credential.helper"
           />
-          
+
           <CommandBlock
             id="erase-credential"
             description="Remove stored credentials from macOS Keychain (press Enter twice after the last line):"
@@ -87,8 +87,12 @@ protocol=https`}
 
           <div className="bg-blue-50 border-l-4 border-blue-500 p-5 mb-6 rounded-lg shadow-sm">
             <p className="text-sm text-gray-800 leading-relaxed">
-              <strong className="text-blue-700 font-semibold">💡 Manual Method:</strong> Open Keychain Access app (Cmd + Space, search &quot;Keychain Access&quot;), 
-              search for &quot;github.com&quot;, and delete all GitHub-related entries.
+              <strong className="text-blue-700 font-semibold">
+                💡 Manual Method:
+              </strong>{" "}
+              Open Keychain Access app (Cmd + Space, search &quot;Keychain
+              Access&quot;), search for &quot;github.com&quot;, and delete all
+              GitHub-related entries.
             </p>
           </div>
         </Section>
@@ -99,19 +103,19 @@ protocol=https`}
             description="Check your current Git username and email:"
             command="git config --global user.name && git config --global user.email"
           />
-          
+
           <CommandBlock
             id="update-name"
             description="Update to your new GitHub username:"
             command='git config --global user.name "Your New Name"'
           />
-          
+
           <CommandBlock
             id="update-email"
             description="Update to your new GitHub email:"
             command='git config --global user.email "newemail@example.com"'
           />
-          
+
           <CommandBlock
             id="verify-config"
             description="Verify your changes were applied correctly:"
@@ -125,13 +129,13 @@ protocol=https`}
             description="List all existing SSH keys in your system:"
             command="ls -la ~/.ssh"
           />
-          
+
           <CommandBlock
             id="remove-rsa"
             description="Remove old RSA SSH keys (if you have them):"
             command="rm ~/.ssh/id_rsa ~/.ssh/id_rsa.pub"
           />
-          
+
           <CommandBlock
             id="remove-ed25519"
             description="Remove old Ed25519 SSH keys (if you have them):"
@@ -145,19 +149,19 @@ protocol=https`}
             description="Generate a new Ed25519 SSH key (recommended). Press Enter to accept default location, optionally set a passphrase:"
             command='ssh-keygen -t ed25519 -C "newemail@example.com"'
           />
-          
+
           <CommandBlock
             id="start-agent"
             description="Start the SSH agent in the background:"
             command='eval "$(ssh-agent -s)"'
           />
-          
+
           <CommandBlock
             id="add-key"
             description="Add your new SSH private key to the SSH agent:"
             command="ssh-add ~/.ssh/id_ed25519"
           />
-          
+
           <CommandBlock
             id="copy-key"
             description="Copy your public SSH key to clipboard (ready to paste into GitHub):"
@@ -167,13 +171,30 @@ protocol=https`}
 
         <Section title="5. Add SSH Key to GitHub">
           <div className="bg-green-50 border-l-4 border-green-500 p-5 mb-6 rounded-lg shadow-sm">
-            <h3 className="font-semibold text-green-800 mb-3 text-base">📝 Steps to add SSH key:</h3>
+            <h3 className="font-semibold text-green-800 mb-3 text-base">
+              📝 Steps to add SSH key:
+            </h3>
             <ol className="text-sm text-gray-800 space-y-2 list-decimal list-inside leading-relaxed">
-              <li>Go to <strong className="text-green-700">github.com/settings/keys</strong></li>
-              <li>Click <strong className="text-green-700">&quot;New SSH key&quot;</strong></li>
+              <li>
+                Go to{" "}
+                <strong className="text-green-700">
+                  github.com/settings/keys
+                </strong>
+              </li>
+              <li>
+                Click{" "}
+                <strong className="text-green-700">
+                  &quot;New SSH key&quot;
+                </strong>
+              </li>
               <li>Give it a title (e.g., &quot;MacBook Air&quot;)</li>
               <li>Paste your key (Cmd + V - it&apos;s already in clipboard)</li>
-              <li>Click <strong className="text-green-700">&quot;Add SSH key&quot;</strong></li>
+              <li>
+                Click{" "}
+                <strong className="text-green-700">
+                  &quot;Add SSH key&quot;
+                </strong>
+              </li>
             </ol>
           </div>
         </Section>
@@ -192,13 +213,13 @@ protocol=https`}
             description="Navigate to your repository and check current remote URL:"
             command="cd /path/to/your/repo && git remote -v"
           />
-          
+
           <CommandBlock
             id="update-https"
             description="Update remote URL to use HTTPS with new account:"
             command="git remote set-url origin https://github.com/new-username/repo-name.git"
           />
-          
+
           <CommandBlock
             id="update-ssh"
             description="Or update remote URL to use SSH with new account:"
@@ -212,7 +233,7 @@ protocol=https`}
             description="Test that everything works by pulling from your repository:"
             command="git pull"
           />
-          
+
           <CommandBlock
             id="test-push"
             description="Or test by pushing to your repository:"
@@ -222,8 +243,12 @@ protocol=https`}
 
         <footer className="mt-20 pt-10 border-t-2 border-gray-300 text-center">
           <div className="bg-gradient-to-r from-green-50 to-blue-50 rounded-2xl p-8 shadow-md">
-            <p className="text-2xl font-bold text-gray-800 mb-2">🎉 Congratulations!</p>
-            <p className="text-gray-600 text-lg">Your macOS is now configured with your new GitHub account.</p>
+            <p className="text-2xl font-bold text-gray-800 mb-2">
+              🎉 Congratulations!
+            </p>
+            <p className="text-gray-600 text-lg">
+              Your macOS is now configured with your new GitHub account.
+            </p>
           </div>
         </footer>
       </div>
