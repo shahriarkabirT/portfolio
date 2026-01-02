@@ -1,15 +1,16 @@
-"use client"
-import { useState } from 'react';
-import { Code, ExternalLink, Github, Layers, Calendar } from 'lucide-react';
+"use client";
+import { Calendar, ExternalLink, Github, Layers } from "lucide-react";
+import { useState } from "react";
 
 export default function ProjectsSection({ limit }: { limit?: number }) {
-  const [filter, setFilter] = useState('all');
-  
+  const [filter, setFilter] = useState("all");
+
   const projects = [
     {
       id: 1,
       title: "Okobiz Property Platform",
-      description: "Real estate property listing and management platform developed under team leadership at Okobiz.",
+      description:
+        "Real estate property listing and management platform developed under team leadership at Okobiz.",
       image: "/project/okobiz.png",
       category: "web",
       stack: ["React", "Node.js", "Express", "MongoDB"],
@@ -20,13 +21,14 @@ export default function ProjectsSection({ limit }: { limit?: number }) {
         "Search and filtering system",
         "User authentication",
         "Property details and media gallery",
-        "Team collaboration features"
-      ]
+        "Team collaboration features",
+      ],
     },
     {
       id: 2,
       title: "All Age Fashion E-commerce",
-      description: "Modern e-commerce platform for fashion retail with complete shopping experience and product management.",
+      description:
+        "Modern e-commerce platform for fashion retail with complete shopping experience and product management.",
       image: "/project/all-age.png",
       category: "web",
       stack: ["React", "Next.js", "Node.js", "MongoDB"],
@@ -37,13 +39,14 @@ export default function ProjectsSection({ limit }: { limit?: number }) {
         "Shopping cart and checkout",
         "User accounts and order history",
         "Payment integration",
-        "Inventory management"
-      ]
+        "Inventory management",
+      ],
     },
     {
       id: 3,
       title: "Al Arabia Carbon Business Portfolio",
-      description: "Professional business portfolio website showcasing company services and carbon solutions.",
+      description:
+        "Professional business portfolio website showcasing company services and carbon solutions.",
       image: "/project/alarabia.png",
       category: "web",
       stack: ["React", "Next.js", "Tailwind CSS"],
@@ -54,13 +57,14 @@ export default function ProjectsSection({ limit }: { limit?: number }) {
         "Services presentation",
         "Contact and inquiry forms",
         "Responsive design",
-        "SEO optimization"
-      ]
+        "SEO optimization",
+      ],
     },
     {
       id: 4,
       title: "Nikki Banana Powder Business Website",
-      description: "Business website for banana powder products with information and ordering capabilities.",
+      description:
+        "Business website for banana powder products with information and ordering capabilities.",
       image: "/project/nikki.png",
       category: "web",
       stack: ["React", "Next.js", "Tailwind CSS"],
@@ -71,13 +75,14 @@ export default function ProjectsSection({ limit }: { limit?: number }) {
         "Business overview",
         "Contact and order forms",
         "Mobile-responsive layout",
-        "Fast loading performance"
-      ]
+        "Fast loading performance",
+      ],
     },
     {
       id: 5,
       title: "Gonoshasthaya Samaj Vittik Medical College Portal",
-      description: "Official web portal for medical college with dynamic content management features.",
+      description:
+        "Official web portal for medical college with dynamic content management features.",
       image: "gonosvmc.png",
       category: "web",
       stack: ["MERN", "React", "Node.js", "Express", "MongoDB"],
@@ -88,13 +93,14 @@ export default function ProjectsSection({ limit }: { limit?: number }) {
         "Image uploads",
         "Faculty profiles",
         "Bulk Alumni Uploads",
-        "Dynamic Information Update"
-      ]
+        "Dynamic Information Update",
+      ],
     },
     {
       id: 6,
       title: "Vidyamayee Government Girls Highschool Portal",
-      description: "Official web portal for Vidyamayee Government Girls Highschool with authentication, notice management, and media uploads.",
+      description:
+        "Official web portal for Vidyamayee Government Girls Highschool with authentication, notice management, and media uploads.",
       image: "vidyamayee.png",
       category: "web",
       stack: ["MERN", "React", "Node.js", "Express", "MongoDB"],
@@ -104,13 +110,14 @@ export default function ProjectsSection({ limit }: { limit?: number }) {
         "Authentication system",
         "Notice, Image, Video Uploads",
         "Dynamic Information Update",
-        "Admin Dashboard"
-      ]
+        "Admin Dashboard",
+      ],
     },
     {
       id: 7,
       title: "Vidyamayee Result Processing Website",
-      description: "Comprehensive result management system for educational institution with document generation and bulk data processing.",
+      description:
+        "Comprehensive result management system for educational institution with document generation and bulk data processing.",
       image: "result_vidyamayee.png",
       category: "web",
       stack: ["MERN", "React", "Node.js", "Express", "MongoDB"],
@@ -121,16 +128,25 @@ export default function ProjectsSection({ limit }: { limit?: number }) {
         "Tabulation system",
         "Dynamic Information Update",
         "Student Profile management",
-        "Bulk Information Upload via Sheets"
-      ]
+        "Bulk Information Upload via Sheets",
+      ],
     },
     {
       id: 8,
       title: "Urbangent E-commerce",
-      description: "Enhanced version of e-commerce platform with complete functionality and modern tech stack.",
+      description:
+        "Enhanced version of e-commerce platform with complete functionality and modern tech stack.",
       image: "urbargent.png",
       category: "web",
-      stack: ["React JS", "Redux", "Redux Toolkit", "Next JS", "Node JS", "Express JS", "MongoDB"],
+      stack: [
+        "React JS",
+        "Redux",
+        "Redux Toolkit",
+        "Next JS",
+        "Node JS",
+        "Express JS",
+        "MongoDB",
+      ],
       link: "https://urbargent.vercel.app",
       github: "https://github.com/shahriarkabirT/urbangent",
       date: "Aug 2024 - Nov 2024",
@@ -139,29 +155,40 @@ export default function ProjectsSection({ limit }: { limit?: number }) {
         "Product catalog and search",
         "Shopping cart and checkout",
         "Order management",
-        "Admin dashboard"
-      ]
+        "Admin dashboard",
+      ],
     },
     {
       id: 9,
       title: "ElevateMart E-commerce",
-      description: "Full-featured e-commerce web application built during internship at CodeElevate Tech.",
+      description:
+        "Full-featured e-commerce web application built during internship at CodeElevate Tech.",
       image: "elevatemart.png",
       category: "web",
-      stack: ["React JS", "Redux", "Redux Toolkit", "Next JS", "Node JS", "Express JS", "MongoDB", "RESTful API"],
+      stack: [
+        "React JS",
+        "Redux",
+        "Redux Toolkit",
+        "Next JS",
+        "Node JS",
+        "Express JS",
+        "MongoDB",
+        "RESTful API",
+      ],
       date: "May 2024 - Aug 2024",
       features: [
         "Complete e-commerce functionality",
         "User authentication",
         "Product management",
         "Shopping cart",
-        "Order processing"
-      ]
+        "Order processing",
+      ],
     },
     {
       id: 10,
       title: "Audio GuestBook",
-      description: "Innovative digital guestbook that allows visitors to record audio messages instead of written notes.",
+      description:
+        "Innovative digital guestbook that allows visitors to record audio messages instead of written notes.",
       image: "audio.png",
       category: "web",
       stack: ["Next JS", "Fastify", "RESTful API"],
@@ -170,13 +197,14 @@ export default function ProjectsSection({ limit }: { limit?: number }) {
         "Audio recording and playback",
         "Guestbook entries management",
         "User-friendly interface",
-        "Secure data storage"
-      ]
+        "Secure data storage",
+      ],
     },
     {
       id: 11,
       title: "Attendance Management System using Face Recognition",
-      description: "Advanced attendance tracking system using facial recognition with anti-spoofing measures.",
+      description:
+        "Advanced attendance tracking system using facial recognition with anti-spoofing measures.",
       image: "/api/placeholder/800/500",
       category: "ai",
       stack: ["Python", "OpenCV", "DLIB"],
@@ -185,60 +213,65 @@ export default function ProjectsSection({ limit }: { limit?: number }) {
         "Anti-spoofing detection",
         "Head Movement Detection",
         "Face Recognition",
-        "Attendance Recording and Management"
-      ]
-    }
+        "Attendance Recording and Management",
+      ],
+    },
   ];
-  
+
   const filteredProjects =
-  filter === "all"
-    ? projects.slice(0, limit || projects.length) // Apply the limit here
-    : projects
-        .filter((project) => project.category === filter)
-        .slice(0, limit || projects.length);
+    filter === "all"
+      ? projects.slice(0, limit || projects.length) // Apply the limit here
+      : projects
+          .filter((project) => project.category === filter)
+          .slice(0, limit || projects.length);
 
   return (
-    <section id="projects" className="py-20 bg-gray-900">
+    <section
+      id="projects"
+      className="py-20 bg-[var(--background)] text-[var(--foreground)] dark:bg-gray-900"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-            My <span className="text-blue-500">Projects</span>
+          <h2 className="text-3xl sm:text-4xl font-bold text-[var(--text-primary)] dark:text-white mb-4">
+            My{" "}
+            <span className="text-blue-600 dark:text-blue-500">Projects</span>
           </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">
-            A showcase of my work across web development and software engineering.
-            These projects demonstrate my technical skills and problem-solving abilities.
+          <p className="text-[var(--text-secondary)] dark:text-gray-400 max-w-2xl mx-auto">
+            A showcase of my work across web development and software
+            engineering. These projects demonstrate my technical skills and
+            problem-solving abilities.
           </p>
         </div>
 
         {/* Filter Buttons */}
         <div className="flex flex-wrap justify-center gap-4 mb-12">
           <button
-            onClick={() => setFilter('all')}
+            onClick={() => setFilter("all")}
             className={`px-6 py-2 rounded-full transition-colors duration-300 ${
-              filter === 'all' 
-                ? 'bg-blue-600 text-white' 
-                : 'bg-gray-800 text-gray-400 hover:bg-gray-700'
+              filter === "all"
+                ? "bg-blue-600 text-white"
+                : "bg-gray-100 text-gray-700 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700"
             }`}
           >
             All Projects
           </button>
           <button
-            onClick={() => setFilter('web')}
+            onClick={() => setFilter("web")}
             className={`px-6 py-2 rounded-full transition-colors duration-300 ${
-              filter === 'web' 
-                ? 'bg-blue-600 text-white' 
-                : 'bg-gray-800 text-gray-400 hover:bg-gray-700'
+              filter === "web"
+                ? "bg-blue-600 text-white"
+                : "bg-gray-100 text-gray-700 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700"
             }`}
           >
             Web Development
           </button>
           <button
-            onClick={() => setFilter('ai')}
+            onClick={() => setFilter("ai")}
             className={`px-6 py-2 rounded-full transition-colors duration-300 ${
-              filter === 'ai' 
-                ? 'bg-blue-600 text-white' 
-                : 'bg-gray-800 text-gray-400 hover:bg-gray-700'
+              filter === "ai"
+                ? "bg-blue-600 text-white"
+                : "bg-gray-100 text-gray-700 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700"
             }`}
           >
             AI Projects
@@ -256,116 +289,118 @@ export default function ProjectsSection({ limit }: { limit?: number }) {
   );
 }
 
-  interface Project {
-    id: number;
-    title: string;
-    description: string;
-    image: string;
-    category: string;
-    stack: string[];
-    link?: string;
-    github?: string;
-    date: string;
-    features: string[];
-  }
-  
-  function ProjectCard({ project }: { project: Project }) {
-    const [showDetails, setShowDetails] = useState(false);
-  
-    return (
-      <div className="bg-gray-800 rounded-xl overflow-hidden shadow-lg transition-transform duration-300 hover:-translate-y-2">
-        {/* Project Image */}
-        <div className="relative h-56 overflow-hidden">
-          <img
-            src={project.image}
-            alt={project.title}
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent opacity-70"></div>
-          <div className="absolute bottom-4 left-4 flex space-x-2">
-            {project.stack.slice(0, 3).map((tech, index) => (
-              <span
-                key={index}
-                className="text-xs px-2 py-1 bg-blue-900/70 text-blue-300 rounded-full"
+interface Project {
+  id: number;
+  title: string;
+  description: string;
+  image: string;
+  category: string;
+  stack: string[];
+  link?: string;
+  github?: string;
+  date: string;
+  features: string[];
+}
+
+function ProjectCard({ project }: { project: Project }) {
+  const [showDetails, setShowDetails] = useState(false);
+
+  return (
+    <div className="bg-white border border-gray-200 dark:bg-gray-800 dark:border-gray-700 rounded-xl overflow-hidden shadow-lg transition-transform duration-300 hover:-translate-y-2">
+      {/* Project Image */}
+      <div className="relative h-56 overflow-hidden">
+        <img
+          src={project.image}
+          alt={project.title}
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/25 to-transparent opacity-70 dark:from-gray-900"></div>
+        <div className="absolute bottom-4 left-4 flex space-x-2">
+          {project.stack.slice(0, 3).map((tech, index) => (
+            <span
+              key={index}
+              className="text-xs px-2 py-1 bg-blue-900/70 text-blue-300 rounded-full"
+            >
+              {tech}
+            </span>
+          ))}
+          {project.stack.length > 3 && (
+            <span className="text-xs px-2 py-1 bg-blue-900/70 text-blue-300 rounded-full">
+              +{project.stack.length - 3}
+            </span>
+          )}
+        </div>
+      </div>
+
+      {/* Project Content */}
+      <div className="p-6">
+        <div className="flex items-center text-gray-500 dark:text-gray-400 text-sm mb-2">
+          <Calendar className="w-4 h-4 mr-1" />
+          <span>{project.date}</span>
+        </div>
+
+        <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
+          {project.title}
+        </h3>
+
+        <p className="text-gray-600 dark:text-gray-400 text-sm mb-4">
+          {showDetails
+            ? project.description
+            : `${project.description.substring(0, 100)}${
+                project.description.length > 100 ? "..." : ""
+              }`}
+        </p>
+
+        {/* Project Features */}
+        {showDetails && (
+          <div className="mt-4 mb-5">
+            <h4 className="text-gray-900 dark:text-white font-medium mb-2 flex items-center">
+              <Layers className="w-4 h-4 mr-1 text-blue-500" />
+              Key Features
+            </h4>
+            <ul className="text-gray-600 dark:text-gray-400 text-sm space-y-1 ml-5">
+              {project.features.map((feature, index) => (
+                <li key={index} className="list-disc">
+                  {feature}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+
+        {/* Action Buttons */}
+        <div className="flex justify-between items-center mt-4">
+          <button
+            onClick={() => setShowDetails(!showDetails)}
+            className="text-blue-600 hover:text-blue-500 dark:text-blue-400 dark:hover:text-blue-300 text-sm font-medium transition"
+          >
+            {showDetails ? "Show Less" : "Show More"}
+          </button>
+
+          <div className="flex space-x-3">
+            {project.github && (
+              <a
+                href={project.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-white transition"
               >
-                {tech}
-              </span>
-            ))}
-            {project.stack.length > 3 && (
-              <span className="text-xs px-2 py-1 bg-blue-900/70 text-blue-300 rounded-full">
-                +{project.stack.length - 3}
-              </span>
+                <Github className="w-5 h-5" />
+              </a>
+            )}
+            {project.link && (
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-white transition"
+              >
+                <ExternalLink className="w-5 h-5" />
+              </a>
             )}
           </div>
         </div>
-  
-        {/* Project Content */}
-        <div className="p-6">
-          <div className="flex items-center text-gray-400 text-sm mb-2">
-            <Calendar className="w-4 h-4 mr-1" />
-            <span>{project.date}</span>
-          </div>
-  
-          <h3 className="text-xl font-semibold text-white mb-2">{project.title}</h3>
-  
-          <p className="text-gray-400 text-sm mb-4">
-            {showDetails
-              ? project.description
-              : `${project.description.substring(0, 100)}${
-                  project.description.length > 100 ? '...' : ''
-                }`}
-          </p>
-  
-          {/* Project Features */}
-          {showDetails && (
-            <div className="mt-4 mb-5">
-              <h4 className="text-white font-medium mb-2 flex items-center">
-                <Layers className="w-4 h-4 mr-1 text-blue-500" />
-                Key Features
-              </h4>
-              <ul className="text-gray-400 text-sm space-y-1 ml-5">
-                {project.features.map((feature, index) => (
-                  <li key={index} className="list-disc">
-                    {feature}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
-  
-          {/* Action Buttons */}
-          <div className="flex justify-between items-center mt-4">
-            <button
-              onClick={() => setShowDetails(!showDetails)}
-              className="text-blue-400 hover:text-blue-300 text-sm font-medium transition"
-            >
-              {showDetails ? 'Show Less' : 'Show More'}
-            </button>
-  
-            <div className="flex space-x-3">
-              {project.github && (
-                <a
-                  href={project.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-white transition"
-                >
-                  <Github className="w-5 h-5" />
-                </a>
-              )}
-              {project.link && (
-                <a
-                  href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-white transition"
-                >
-                  <ExternalLink className="w-5 h-5" />
-                </a>
-              )}
-            </div>
-          </div>
-        </div>
       </div>
-    );
-  }
+    </div>
+  );
+}

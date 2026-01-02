@@ -148,16 +148,16 @@ export default function TechBlogPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900">
+    <div className="min-h-screen bg-[var(--background)] text-[var(--foreground)] dark:bg-gradient-to-br dark:from-gray-900 dark:via-black dark:to-gray-900">
       {/* Navigation */}
       {/* Hero Section */}
       <header className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 opacity-10"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 opacity-10 dark:opacity-10"></div>
         <div className="max-w-7xl mx-auto px-6 py-20 text-center relative z-10">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 text-white">
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 text-[var(--text-primary)] dark:text-white">
             Tech Insights & Tutorials
           </h1>
-          <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto">
+          <p className="text-xl md:text-2xl text-[var(--text-secondary)] dark:text-gray-300 mb-8 max-w-3xl mx-auto">
             Master cloud computing, DevOps, security, and modern web development
             with our in-depth guides
           </p>
@@ -166,9 +166,9 @@ export default function TechBlogPage() {
               <input
                 type="text"
                 placeholder="Search articles..."
-                className="w-full px-6 py-4 rounded-full bg-white bg-opacity-10 backdrop-blur-md border border-gray-700 text-white placeholder-gray-400 focus:outline-none focus:border-gray-500 transition-colors"
+                className="w-full px-6 py-4 rounded-full bg-[var(--card-bg)] border border-[var(--card-border)] text-[var(--text-primary)] placeholder-[var(--text-secondary)] focus:outline-none focus:border-[var(--primary)] transition-colors"
               />
-              <span className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400">
+              <span className="absolute right-4 top-1/2 transform -translate-y-1/2 text-[var(--text-secondary)]">
                 🔍
               </span>
             </div>
@@ -186,10 +186,12 @@ export default function TechBlogPage() {
         {/* Latest Articles */}
         <section className="mb-16">
           <div className="flex items-center justify-between mb-8">
-            <h2 className="text-3xl font-bold text-white">Latest Articles</h2>
+            <h2 className="text-3xl font-bold text-[var(--text-primary)] dark:text-white">
+              Latest Articles
+            </h2>
             <a
               href="#"
-              className="text-gray-400 hover:text-white transition-colors text-sm"
+              className="text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors text-sm"
             >
               View All →
             </a>
@@ -204,7 +206,7 @@ export default function TechBlogPage() {
 
         {/* Categories */}
         <section className="mb-16">
-          <h2 className="text-3xl font-bold text-white mb-8 text-center">
+          <h2 className="text-3xl font-bold text-[var(--text-primary)] dark:text-white mb-8 text-center">
             Explore by Category
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-4">
@@ -220,20 +222,22 @@ export default function TechBlogPage() {
             ].map((category, index) => (
               <div
                 key={index}
-                className="bg-gradient-to-br from-gray-800 to-gray-900 border border-gray-700 rounded-xl p-6 text-center cursor-pointer transition-all duration-300 hover:border-gray-500 hover:scale-105"
+                className="bg-[var(--card-bg)] border border-[var(--card-border)] rounded-xl p-6 text-center cursor-pointer transition-all duration-300 hover:border-[var(--primary)] hover:scale-105"
               >
-                <p className="font-semibold text-white">{category}</p>
+                <p className="font-semibold text-[var(--text-primary)]">
+                  {category}
+                </p>
               </div>
             ))}
           </div>
         </section>
 
         {/* Newsletter */}
-        <section className="bg-[#171F2F] rounded-2xl p-8 md:p-12 text-center shadow-2xl">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
+        <section className="bg-[var(--card-bg)] border border-[var(--card-border)] rounded-2xl p-8 md:p-12 text-center shadow-2xl">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[var(--text-primary)]">
             Stay Updated
           </h2>
-          <p className="text-gray-100 mb-8 max-w-2xl mx-auto text-lg">
+          <p className="text-[var(--text-secondary)] mb-8 max-w-2xl mx-auto text-lg">
             Get the latest tech articles, tutorials, and insights delivered
             directly to your inbox every week.
           </p>
@@ -241,9 +245,9 @@ export default function TechBlogPage() {
             <input
               type="email"
               placeholder="Enter your email address"
-              className="flex-1 px-6 py-4 rounded-lg bg-white bg-opacity-20 backdrop-blur-md border border-white border-opacity-30 text-white placeholder-gray-200 focus:outline-none focus:border-opacity-50 transition-colors"
+              className="flex-1 px-6 py-4 rounded-lg bg-[var(--background)] border border-[var(--card-border)] text-[var(--text-primary)] placeholder-[var(--text-secondary)] focus:outline-none focus:border-[var(--primary)] transition-colors"
             />
-            <button className="px-8 py-4 bg-white text-purple-600 font-semibold rounded-lg hover:bg-gray-100 transition-colors whitespace-nowrap">
+            <button className="px-8 py-4 bg-[var(--text-primary)] text-[var(--background)] font-semibold rounded-lg hover:opacity-90 transition-colors whitespace-nowrap">
               Subscribe Now
             </button>
           </div>

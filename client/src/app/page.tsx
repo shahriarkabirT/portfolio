@@ -1,28 +1,22 @@
-"use client"
-import React from 'react'
-import HeroSection from '@/components/HeroSection'
-import Navbar from '@/components/Navbar'
-import ProjectsSection from '@/components/Projects'
-import Skills from '@/components/Skills'
-import WorkExperience from '@/components/WorkExperience'
-import Contact from '@/components/Contact'
-import Footer from '@/components/Footer'
-
+"use client";
+import Contact from "@/components/Contact";
+import Footer from "@/components/Footer";
+import HeroSection from "@/components/HeroSection";
+import ProjectsSection from "@/components/Projects";
+import Skills from "@/components/Skills";
+import WorkExperience from "@/components/WorkExperience";
 
 const page = () => {
   return (
-    <>
-    <div className='absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gray-900 via-gray-900 to-blue-900 opacity-90'>
-    <HeroSection/>
-    <ProjectsSection limit={6} />
-    <Skills/>
-    <WorkExperience/>
-    <Contact/>
-    <Footer/>
+    <div className="min-h-screen bg-[var(--background)] text-[var(--foreground)]">
+      <HeroSection />
+      <ProjectsSection limit={6} />
+      <Skills />
+      <WorkExperience />
+      <Contact />
+      <Footer />
     </div>
+  );
+};
 
-    </>
-  )
-}
-
-export default page
+export default page;
