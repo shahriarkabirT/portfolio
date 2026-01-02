@@ -1,23 +1,17 @@
-"use client"
+"use client";
 import {
   Check,
   ChevronRight,
   Code,
   Copy,
   GitBranch,
-  Menu,
-  Moon,
   Server,
-  Sun,
   Terminal,
-  X,
   Zap,
 } from "lucide-react";
 import React, { useState } from "react";
 
 export default function CICDBlog() {
-  const [isDark, setIsDark] = useState(true);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [copiedCode, setCopiedCode] = useState<string | null>(null);
 
   const copyToClipboard = (code: string, id: string) => {
@@ -35,46 +29,24 @@ export default function CICDBlog() {
     language: string;
     id: string;
   }) => (
-    <div
-      className={`relative rounded-lg overflow-hidden ${
-        isDark ? "bg-gray-900" : "bg-gray-100"
-      } my-4`}
-    >
-      <div
-        className={`flex items-center justify-between px-4 py-2 border-b ${
-          isDark ? "bg-gray-800 border-gray-700" : "bg-gray-200 border-gray-300"
-        }`}
-      >
-        <span
-          className={`text-xs font-mono ${
-            isDark ? "text-gray-400" : "text-gray-600"
-          }`}
-        >
+    <div className="relative rounded-lg overflow-hidden bg-[var(--card-bg)] border border-[var(--card-border)] my-4">
+      <div className="flex items-center justify-between px-4 py-2 border-b border-[var(--card-border)] bg-[var(--background)]">
+        <span className="text-xs font-mono text-[var(--text-secondary)]">
           {language}
-        </ span>
+        </span>
         <button
           onClick={() => copyToClipboard(code, id)}
-          className={`p-1.5 rounded transition-colors ${
-            isDark ? "hover:bg-gray-700" : "hover:bg-gray-300"
-          }`}
+          className="p-1.5 rounded transition-colors hover:bg-[var(--card-bg)]"
         >
           {copiedCode === id ? (
             <Check className="w-4 h-4 text-green-500" />
           ) : (
-            <Copy
-              className={`w-4 h-4 ${
-                isDark ? "text-gray-400" : "text-gray-600"
-              }`}
-            />
+            <Copy className="w-4 h-4 text-[var(--text-secondary)] hover:text-[var(--text-primary)]" />
           )}
         </button>
       </div>
       <pre className="p-4 overflow-x-auto">
-        <code
-          className={`text-sm ${isDark ? "text-gray-300" : "text-gray-800"}`}
-        >
-          {code}
-        </code>
+        <code className="text-sm text-[var(--text-primary)]">{code}</code>
       </pre>
     </div>
   );
@@ -90,16 +62,8 @@ export default function CICDBlog() {
   }) => (
     <section className="mb-12">
       <div className="flex items-center gap-3 mb-4">
-        {Icon && (
-          <Icon
-            className={`w-6 h-6 ${isDark ? "text-blue-400" : "text-blue-600"}`}
-          />
-        )}
-        <h2
-          className={`text-2xl font-bold ${
-            isDark ? "text-white" : "text-gray-900"
-          }`}
-        >
+        {Icon && <Icon className="w-6 h-6 text-blue-500" />}
+        <h2 className="text-2xl font-bold text-[var(--text-primary)]">
           {title}
         </h2>
       </div>
@@ -108,83 +72,15 @@ export default function CICDBlog() {
   );
 
   return (
-    <div
-      className={`min-h-screen transition-colors duration-300 ${
-        isDark ? "bg-gray-950 text-gray-100" : "bg-white text-gray-900"
-      }`}
-    >
-      {/* Header */}
-      <header
-        className={`sticky top-0 z-50 backdrop-blur-md border-b ${
-          isDark
-            ? "bg-gray-900/80 border-gray-800"
-            : "bg-white/80 border-gray-200"
-        }`}
-      >
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
-            <div className="flex items-center gap-2">
-              <Terminal
-                className={`w-6 h-6 ${
-                  isDark ? "text-blue-400" : "text-blue-600"
-                }`}
-              />
-              <h1 className="text-xl font-bold">CI/CD Guide</h1>
-            </div>
-
-            <div className="flex items-center gap-4">
-              <button
-                onClick={() => setIsDark(!isDark)}
-                className={`p-2 rounded-lg transition-colors ${
-                  isDark ? "hover:bg-gray-800" : "hover:bg-gray-100"
-                }`}
-              >
-                {isDark ? (
-                  <Sun className="w-5 h-5" />
-                ) : (
-                  <Moon className="w-5 h-5" />
-                )}
-              </button>
-
-              <button
-                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className={`md:hidden p-2 rounded-lg transition-colors ${
-                  isDark ? "hover:bg-gray-800" : "hover:bg-gray-100"
-                }`}
-              >
-                {isMobileMenuOpen ? (
-                  <X className="w-5 h-5" />
-                ) : (
-                  <Menu className="w-5 h-5" />
-                )}
-              </button>
-            </div>
-          </div>
-        </div>
-      </header>
-
+    <div className="min-h-screen bg-[var(--background)] text-[var(--foreground)] transition-colors duration-300">
       {/* Hero Section */}
-      <div
-        className={`border-b ${
-          isDark
-            ? "bg-gradient-to-b from-gray-900 to-gray-950 border-gray-800"
-            : "bg-gradient-to-b from-gray-50 to-white border-gray-200"
-        }`}
-      >
+      <div className="border-b border-[var(--card-border)] bg-gradient-to-b from-[var(--background)] to-[var(--background)]">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <div className="text-center">
-            <h1
-              className={`text-4xl sm:text-5xl font-bold mb-4 ${
-                isDark ? "text-white" : "text-gray-900"
-              }`}
-            >
+            <h1 className="text-4xl sm:text-5xl font-bold mb-4 text-[var(--text-primary)]">
               CI/CD with VPS: Complete A to Z Guide
             </h1>
-            <p
-              className={`text-lg ${
-                isDark ? "text-gray-400" : "text-gray-600"
-              } max-w-3xl mx-auto`}
-            >
+            <p className="text-lg text-[var(--text-secondary)] max-w-3xl mx-auto">
               From theory to practical implementation - Build a real-world CI/CD
               pipeline for your VPS
             </p>
@@ -197,16 +93,12 @@ export default function CICDBlog() {
               ].map((item, i) => (
                 <div
                   key={i}
-                  className={`flex items-center gap-2 px-4 py-2 rounded-full ${
-                    isDark ? "bg-gray-800" : "bg-gray-100"
-                  }`}
+                  className="flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--card-bg)]"
                 >
-                  <item.icon
-                    className={`w-4 h-4 ${
-                      isDark ? "text-blue-400" : "text-blue-600"
-                    }`}
-                  />
-                  <span className="text-sm font-medium">{item.text}</span>
+                  <item.icon className="w-4 h-4 text-blue-600 dark:text-blue-400" />
+                  <span className="text-sm font-medium text-[var(--text-primary)] dark:text-white">
+                    {item.text}
+                  </span>
                 </div>
               ))}
             </div>
@@ -218,31 +110,17 @@ export default function CICDBlog() {
       <main className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Part 1: Theory */}
         <Section title="Part 1: Theory & Fundamentals" icon={Code}>
-          <div
-            className={`rounded-lg p-6 mb-6 ${
-              isDark
-                ? "bg-gray-900 border border-gray-800"
-                : "bg-gray-50 border border-gray-200"
-            }`}
-          >
-            <h3
-              className={`text-xl font-semibold mb-3 ${
-                isDark ? "text-blue-400" : "text-blue-600"
-              }`}
-            >
+          <div className="rounded-lg p-6 mb-6 bg-[var(--card-bg)] border border-[var(--card-border)]">
+            <h3 className="text-xl font-semibold mb-3 text-blue-500">
               What is CI/CD?
             </h3>
 
             <div className="space-y-4">
               <div>
-                <h4 className="font-semibold mb-2">
+                <h4 className="font-semibold mb-2 text-[var(--text-primary)]">
                   Continuous Integration (CI)
                 </h4>
-                <ul
-                  className={`space-y-1 ${
-                    isDark ? "text-gray-300" : "text-gray-700"
-                  }`}
-                >
+                <ul className="space-y-1 text-[var(--text-secondary)]">
                   <li className="flex items-start gap-2">
                     <ChevronRight className="w-4 h-4 mt-1 flex-shrink-0" />
                     <span>
@@ -267,11 +145,7 @@ export default function CICDBlog() {
                 <h4 className="font-semibold mb-2">
                   Continuous Deployment (CD)
                 </h4>
-                <ul
-                  className={`space-y-1 ${
-                    isDark ? "text-gray-300" : "text-gray-700"
-                  }`}
-                >
+                <ul className="space-y-1 text-[var(--text-secondary)]">
                   <li className="flex items-start gap-2">
                     <ChevronRight className="w-4 h-4 mt-1 flex-shrink-0" />
                     <span>
@@ -292,19 +166,11 @@ export default function CICDBlog() {
             </div>
           </div>
 
-          <div
-            className={`rounded-lg p-6 ${
-              isDark
-                ? "bg-blue-900/20 border border-blue-800"
-                : "bg-blue-50 border border-blue-200"
-            }`}
-          >
-            <h4 className="font-semibold mb-3">CI/CD Pipeline Flow</h4>
-            <div
-              className={`font-mono text-sm p-4 rounded ${
-                isDark ? "bg-gray-900" : "bg-white"
-              }`}
-            >
+          <div className="rounded-lg p-6 bg-blue-50 border border-blue-200 dark:bg-blue-900/20 dark:border-blue-800">
+            <h4 className="font-semibold mb-3 text-[var(--text-primary)]">
+              CI/CD Pipeline Flow
+            </h4>
+            <div className="font-mono text-sm p-4 rounded bg-white dark:bg-gray-900 text-[var(--text-secondary)]">
               Code Push → Git Repository → CI/CD Service → Build → Test → Deploy
               to VPS → Health Check
             </div>
@@ -313,7 +179,7 @@ export default function CICDBlog() {
 
         {/* Part 2: Prerequisites */}
         <Section title="Part 2: Prerequisites" icon={Server}>
-          <p className={`mb-4 ${isDark ? "text-gray-300" : "text-gray-700"}`}>
+          <p className="mb-4 text-[var(--text-secondary)]">
             Before diving into implementation, make sure you have the following
             ready:
           </p>
@@ -329,22 +195,12 @@ export default function CICDBlog() {
             ].map((item, i) => (
               <div
                 key={i}
-                className={`flex items-start gap-3 p-4 rounded-lg ${
-                  isDark ? "bg-gray-900" : "bg-gray-50"
-                }`}
+                className="flex items-start gap-3 p-4 rounded-lg bg-[var(--card-bg)] border border-[var(--card-border)]"
               >
-                <div
-                  className={`w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 ${
-                    isDark
-                      ? "bg-blue-900/50 text-blue-400"
-                      : "bg-blue-100 text-blue-600"
-                  }`}
-                >
+                <div className="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 bg-blue-100 text-blue-600 dark:bg-blue-900/50 dark:text-blue-400">
                   {i + 1}
                 </div>
-                <span className={isDark ? "text-gray-300" : "text-gray-700"}>
-                  {item}
-                </span>
+                <span className="text-[var(--text-secondary)]">{item}</span>
               </div>
             ))}
           </div>
@@ -374,14 +230,10 @@ sudo npm install -g pm2`}
         <Section title="Part 3: Practical Implementation" icon={Zap}>
           {/* Step 1: Application */}
           <div className="mb-8">
-            <h3
-              className={`text-xl font-semibold mb-3 ${
-                isDark ? "text-white" : "text-gray-900"
-              }`}
-            >
+            <h3 className="text-xl font-semibold mb-3 text-[var(--text-primary)]">
               Step 1: Create Your Application
             </h3>
-            <p className={`mb-4 ${isDark ? "text-gray-300" : "text-gray-700"}`}>
+            <p className="mb-4 text-[var(--text-secondary)]">
               Let's create a simple Node.js Express application with health
               checks:
             </p>
@@ -424,14 +276,10 @@ module.exports = app;`}
 
           {/* Step 2: SSH Keys */}
           <div className="mb-8">
-            <h3
-              className={`text-xl font-semibold mb-3 ${
-                isDark ? "text-white" : "text-gray-900"
-              }`}
-            >
+            <h3 className="text-xl font-semibold mb-3 text-[var(--text-primary)]">
               Step 2: Set Up SSH Keys for Deployment
             </h3>
-            <p className={`mb-4 ${isDark ? "text-gray-300" : "text-gray-700"}`}>
+            <p className="mb-4 text-[var(--text-secondary)]">
               Generate SSH keys for secure, automated deployments:
             </p>
             <CodeBlock
@@ -453,20 +301,12 @@ cat ~/.ssh/cicd_deploy_key`}
 
           {/* Step 3: GitHub Actions */}
           <div className="mb-8">
-            <h3
-              className={`text-xl font-semibold mb-3 ${
-                isDark ? "text-white" : "text-gray-900"
-              }`}
-            >
+            <h3 className="text-xl font-semibold mb-3 text-[var(--text-primary)]">
               Step 3: GitHub Actions CI/CD Pipeline
             </h3>
-            <p className={`mb-4 ${isDark ? "text-gray-300" : "text-gray-700"}`}>
+            <p className="mb-4 text-[var(--text-secondary)]">
               Create{" "}
-              <code
-                className={`px-2 py-1 rounded ${
-                  isDark ? "bg-gray-800" : "bg-gray-100"
-                }`}
-              >
+              <code className="px-2 py-1 rounded bg-gray-100 dark:bg-gray-800">
                 .github/workflows/deploy.yml
               </code>{" "}
               in your repository:
@@ -532,14 +372,10 @@ jobs:
 
           {/* Step 4: VPS Prep */}
           <div className="mb-8">
-            <h3
-              className={`text-xl font-semibold mb-3 ${
-                isDark ? "text-white" : "text-gray-900"
-              }`}
-            >
+            <h3 className="text-xl font-semibold mb-3 text-[var(--text-primary)]">
               Step 4: VPS Preparation Script
             </h3>
-            <p className={`mb-4 ${isDark ? "text-gray-300" : "text-gray-700"}`}>
+            <p className="mb-4 text-[var(--text-secondary)]">
               Run this script on your VPS to prepare it for deployment:
             </p>
             <CodeBlock
@@ -602,21 +438,11 @@ echo "✅ VPS setup complete!"`}
 
           {/* Step 5: GitHub Secrets */}
           <div className="mb-8">
-            <h3
-              className={`text-xl font-semibold mb-3 ${
-                isDark ? "text-white" : "text-gray-900"
-              }`}
-            >
+            <h3 className="text-xl font-semibold mb-3 text-[var(--text-primary)]">
               Step 5: Configure GitHub Secrets
             </h3>
-            <div
-              className={`rounded-lg p-6 ${
-                isDark ? "bg-gray-900" : "bg-gray-50"
-              }`}
-            >
-              <p
-                className={`mb-4 ${isDark ? "text-gray-300" : "text-gray-700"}`}
-              >
+            <div className="rounded-lg p-6 bg-[var(--card-bg)] border border-[var(--card-border)]">
+              <p className="mb-4 text-[var(--text-secondary)]">
                 Add these secrets to your GitHub repository (Settings → Secrets
                 and variables → Actions):
               </p>
@@ -638,22 +464,12 @@ echo "✅ VPS setup complete!"`}
                 ].map((secret, i) => (
                   <div
                     key={i}
-                    className={`p-3 rounded ${
-                      isDark ? "bg-gray-800" : "bg-white"
-                    }`}
+                    className="p-3 rounded bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700"
                   >
-                    <code
-                      className={`font-mono font-semibold ${
-                        isDark ? "text-blue-400" : "text-blue-600"
-                      }`}
-                    >
+                    <code className="font-mono font-semibold text-blue-600 dark:text-blue-400">
                       {secret.name}
                     </code>
-                    <p
-                      className={`text-sm mt-1 ${
-                        isDark ? "text-gray-400" : "text-gray-600"
-                      }`}
-                    >
+                    <p className="text-sm mt-1 text-gray-600 dark:text-gray-400">
                       {secret.desc}
                     </p>
                   </div>
@@ -665,35 +481,19 @@ echo "✅ VPS setup complete!"`}
 
         {/* Testing Section */}
         <Section title="Testing Your Pipeline" icon={Terminal}>
-          <div
-            className={`rounded-lg p-6 ${
-              isDark
-                ? "bg-gradient-to-r from-green-900/20 to-blue-900/20 border border-green-800"
-                : "bg-gradient-to-r from-green-50 to-blue-50 border border-green-200"
-            }`}
-          >
-            <h4 className="font-semibold mb-3">Deploy Your First Version</h4>
-            <ol
-              className={`space-y-2 ${
-                isDark ? "text-gray-300" : "text-gray-700"
-              }`}
-            >
+          <div className="rounded-lg p-6 bg-gradient-to-r from-green-50 to-blue-50 dark:from-green-900/20 dark:to-blue-900/20 border border-green-200 dark:border-green-800">
+            <h4 className="font-semibold mb-3 text-[var(--text-primary)]">
+              Deploy Your First Version
+            </h4>
+            <ol className="space-y-2 text-[var(--text-secondary)]">
               <li className="flex items-start gap-2">
-                <span
-                  className={`font-bold ${
-                    isDark ? "text-green-400" : "text-green-600"
-                  }`}
-                >
+                <span className="font-bold text-green-600 dark:text-green-400">
                   1.
                 </span>
                 <span>Commit and push your code to the main branch</span>
               </li>
               <li className="flex items-start gap-2">
-                <span
-                  className={`font-bold ${
-                    isDark ? "text-green-400" : "text-green-600"
-                  }`}
-                >
+                <span className="font-bold text-green-600 dark:text-green-400">
                   2.
                 </span>
                 <span>
@@ -701,21 +501,13 @@ echo "✅ VPS setup complete!"`}
                 </span>
               </li>
               <li className="flex items-start gap-2">
-                <span
-                  className={`font-bold ${
-                    isDark ? "text-green-400" : "text-green-600"
-                  }`}
-                >
+                <span className="font-bold text-green-600 dark:text-green-400">
                   3.
                 </span>
                 <span>Wait for tests to pass and deployment to complete</span>
               </li>
               <li className="flex items-start gap-2">
-                <span
-                  className={`font-bold ${
-                    isDark ? "text-green-400" : "text-green-600"
-                  }`}
-                >
+                <span className="font-bold text-green-600 dark:text-green-400">
                   4.
                 </span>
                 <span>Visit your VPS IP or domain to see your app live!</span>
@@ -784,24 +576,18 @@ pm2 logs myapp`}
             ].map((section, i) => (
               <div
                 key={i}
-                className={`p-6 rounded-lg ${
-                  isDark ? "bg-gray-900" : "bg-gray-50"
-                }`}
+                className="p-6 rounded-lg bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800"
               >
-                <h4 className="font-semibold mb-3">{section.title}</h4>
+                <h4 className="font-semibold mb-3 text-[var(--text-primary)]">
+                  {section.title}
+                </h4>
                 <ul className="space-y-2">
                   {section.tips.map((tip, j) => (
                     <li
                       key={j}
-                      className={`flex items-start gap-2 text-sm ${
-                        isDark ? "text-gray-300" : "text-gray-700"
-                      }`}
+                      className="flex items-start gap-2 text-sm text-[var(--text-secondary)]"
                     >
-                      <ChevronRight
-                        className={`w-4 h-4 mt-0.5 flex-shrink-0 ${
-                          isDark ? "text-blue-400" : "text-blue-600"
-                        }`}
-                      />
+                      <ChevronRight className="w-4 h-4 mt-0.5 flex-shrink-0 text-blue-600 dark:text-blue-400" />
                       <span>{tip}</span>
                     </li>
                   ))}
@@ -812,29 +598,15 @@ pm2 logs myapp`}
         </Section>
 
         {/* Conclusion */}
-        <div
-          className={`rounded-lg p-8 text-center ${
-            isDark
-              ? "bg-gradient-to-r from-blue-900/30 to-purple-900/30 border border-blue-800"
-              : "bg-gradient-to-r from-blue-50 to-purple-50 border border-blue-200"
-          }`}
-        >
-          <h3
-            className={`text-2xl font-bold mb-3 ${
-              isDark ? "text-white" : "text-gray-900"
-            }`}
-          >
+        <div className="rounded-lg p-8 text-center bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/30 dark:to-purple-900/30 border border-blue-200 dark:border-blue-800">
+          <h3 className="text-2xl font-bold mb-3 text-[var(--text-primary)]">
             🎉 You're All Set!
           </h3>
-          <p
-            className={`text-lg mb-4 ${
-              isDark ? "text-gray-300" : "text-gray-700"
-            }`}
-          >
+          <p className="text-lg mb-4 text-[var(--text-secondary)]">
             You now have a fully automated CI/CD pipeline that deploys your
             application to a VPS whenever you push to the main branch.
           </p>
-          <p className={isDark ? "text-gray-400" : "text-gray-600"}>
+          <p className="text-gray-600 dark:text-gray-400">
             Start building, commit your changes, and watch your code
             automatically deploy to production!
           </p>
@@ -842,14 +614,10 @@ pm2 logs myapp`}
       </main>
 
       {/* Footer */}
-      <footer
-        className={`border-t mt-16 ${
-          isDark ? "bg-gray-900 border-gray-800" : "bg-gray-50 border-gray-200"
-        }`}
-      >
+      <footer className="border-t mt-16 bg-white dark:bg-gray-900 border-gray-200 dark:border-gray-800">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="text-center">
-            <p className={isDark ? "text-gray-400" : "text-gray-600"}>
+            <p className="text-gray-600 dark:text-gray-400">
               Happy Deploying! 🚀
             </p>
           </div>
