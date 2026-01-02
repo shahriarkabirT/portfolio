@@ -51,7 +51,7 @@ export default function CICDBlog() {
           }`}
         >
           {language}
-        </span>
+        </ span>
         <button
           onClick={() => copyToClipboard(code, id)}
           className={`p-1.5 rounded transition-colors ${
