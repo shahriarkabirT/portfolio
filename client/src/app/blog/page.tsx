@@ -133,6 +133,18 @@ export default function TechBlogPage() {
         "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=250&fit=crop",
       link: "/blog/api-design-practices",
     },
+    {
+      id: 12,
+      title: "How to Change Your GitHub Account on macOS",
+      description:
+        "A complete step-by-step guide to switch GitHub accounts on your Mac, including SSH key setup and credential management.",
+      category: "DevOps",
+      readTime: "12 min read",
+      date: "Jan 2, 2026",
+      image:
+        "https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?w=400&h=250&fit=crop",
+      link: "/blog/macos-replace-github-account",
+    },
   ];
 
   return (
