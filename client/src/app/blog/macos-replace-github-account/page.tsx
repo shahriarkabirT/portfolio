@@ -1,40 +1,54 @@
-import React, { useState } from 'react';
+import React, { useState, ReactNode } from 'react';
 import { Copy, Check } from 'lucide-react';
 
-export default function GitHubSwitchGuide() {
-  const [copiedId, setCopiedId] = useState(null);
+interface CommandBlockProps {
+  command: string;
+  description: string;
+  id: string;
+}
 
-  const copyToClipboard = (text, id) => {
+interface SectionProps {
+  title: string;
+  children: ReactNode;
+}
+
+export default function GitHubSwitchGuide() {
+  const [copiedId, setCopiedId] = useState<string | null>(null);
+
+  const copyToClipboard = (text: string, id: string) => {
     navigator.clipboard.writeText(text);
     setCopiedId(id);
     setTimeout(() => setCopiedId(null), 2000);
   };
 
-  const CommandBlock = ({ command, description, id }) => (
-    <div className="mb-6 bg-white rounded-lg shadow-sm border border-gray-200 p-4">
-      <p className="text-gray-700 mb-3">{description}</p>
-      <div className="relative bg-gray-900 rounded-md p-4 pr-12">
-        <code className="text-green-400 text-sm font-mono block overflow-x-auto">
+  const CommandBlock = ({ command, description, id }: CommandBlockProps) => (
+    <div className="mb-6 bg-white rounded-xl shadow-md border border-gray-200 p-5 hover:shadow-lg transition-shadow duration-300">
+      <p className="text-gray-700 mb-3 leading-relaxed">{description}</p>
+      <div className="relative bg-gray-950 rounded-lg p-4 pr-12 border border-gray-800">
+        <code className="text-green-400 text-sm font-mono block overflow-x-auto leading-relaxed">
           {command}
         </code>
         <button
           onClick={() => copyToClipboard(command, id)}
-          className="absolute top-3 right-3 p-2 rounded hover:bg-gray-800 transition-colors"
+          className="absolute top-3 right-3 p-2 rounded-md hover:bg-gray-800 transition-all duration-200 hover:scale-110"
           aria-label="Copy command"
         >
           {copiedId === id ? (
             <Check className="w-4 h-4 text-green-400" />
           ) : (
-            <Copy className="w-4 h-4 text-gray-400" />
+            <Copy className="w-4 h-4 text-gray-400 hover:text-gray-200" />
           )}
         </button>
       </div>
     </div>
   );
 
-  const Section = ({ title, children }) => (
-    <section className="mb-10">
-      <h2 className="text-2xl font-bold text-gray-800 mb-4 pb-2 border-b-2 border-blue-500">
+  const Section = ({ title, children }: SectionProps) => (
+    <section className="mb-12">
+      <h2 className="text-2xl font-bold text-gray-900 mb-6 pb-3 border-b-2 border-blue-500 flex items-center gap-2">
+        <span className="bg-blue-500 text-white w-8 h-8 rounded-full flex items-center justify-center text-sm">
+          {title.charAt(0)}
+        </span>
         {title}
       </h2>
       {children}
@@ -42,13 +56,16 @@ export default function GitHubSwitchGuide() {
   );
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
-      <div className="max-w-4xl mx-auto px-6 py-12">
-        <header className="mb-12 text-center">
-          <h1 className="text-4xl font-bold text-gray-900 mb-3">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
+      <div className="max-w-5xl mx-auto px-6 py-16">
+        <header className="mb-16 text-center">
+          <div className="inline-block mb-4 px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold">
+            Tutorial Guide
+          </div>
+          <h1 className="text-5xl font-extrabold text-gray-900 mb-4 leading-tight">
             How to Change Your GitHub Account on macOS
           </h1>
-          <p className="text-gray-600 text-lg">
+          <p className="text-gray-600 text-xl max-w-2xl mx-auto leading-relaxed">
             A complete step-by-step guide to switch GitHub accounts on your Mac
           </p>
         </header>
@@ -68,10 +85,10 @@ host=github.com
 protocol=https`}
           />
 
-          <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6 rounded">
-            <p className="text-sm text-gray-700">
-              <strong>Manual Method:</strong> Open Keychain Access app (Cmd + Space, search "Keychain Access"), 
-              search for "github.com", and delete all GitHub-related entries.
+          <div className="bg-blue-50 border-l-4 border-blue-500 p-5 mb-6 rounded-lg shadow-sm">
+            <p className="text-sm text-gray-800 leading-relaxed">
+              <strong className="text-blue-700 font-semibold">💡 Manual Method:</strong> Open Keychain Access app (Cmd + Space, search &quot;Keychain Access&quot;), 
+              search for &quot;github.com&quot;, and delete all GitHub-related entries.
             </p>
           </div>
         </Section>
@@ -149,13 +166,14 @@ protocol=https`}
         </Section>
 
         <Section title="5. Add SSH Key to GitHub">
-          <div className="bg-green-50 border-l-4 border-green-500 p-4 mb-6 rounded">
-            <ol className="text-sm text-gray-700 space-y-2 list-decimal list-inside">
-              <li>Go to <strong>github.com/settings/keys</strong></li>
-              <li>Click <strong>"New SSH key"</strong></li>
-              <li>Give it a title (e.g., "MacBook Air")</li>
-              <li>Paste your key (Cmd + V - it's already in clipboard)</li>
-              <li>Click <strong>"Add SSH key"</strong></li>
+          <div className="bg-green-50 border-l-4 border-green-500 p-5 mb-6 rounded-lg shadow-sm">
+            <h3 className="font-semibold text-green-800 mb-3 text-base">📝 Steps to add SSH key:</h3>
+            <ol className="text-sm text-gray-800 space-y-2 list-decimal list-inside leading-relaxed">
+              <li>Go to <strong className="text-green-700">github.com/settings/keys</strong></li>
+              <li>Click <strong className="text-green-700">&quot;New SSH key&quot;</strong></li>
+              <li>Give it a title (e.g., &quot;MacBook Air&quot;)</li>
+              <li>Paste your key (Cmd + V - it&apos;s already in clipboard)</li>
+              <li>Click <strong className="text-green-700">&quot;Add SSH key&quot;</strong></li>
             </ol>
           </div>
         </Section>
@@ -202,8 +220,11 @@ protocol=https`}
           />
         </Section>
 
-        <footer className="mt-16 pt-8 border-t border-gray-300 text-center text-gray-600 text-sm">
-          <p>🎉 Congratulations! Your macOS is now configured with your new GitHub account.</p>
+        <footer className="mt-20 pt-10 border-t-2 border-gray-300 text-center">
+          <div className="bg-gradient-to-r from-green-50 to-blue-50 rounded-2xl p-8 shadow-md">
+            <p className="text-2xl font-bold text-gray-800 mb-2">🎉 Congratulations!</p>
+            <p className="text-gray-600 text-lg">Your macOS is now configured with your new GitHub account.</p>
+          </div>
         </footer>
       </div>
     </div>
