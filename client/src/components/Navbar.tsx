@@ -18,7 +18,6 @@ export default function Navbar() {
   }, []);
 
   const navItems = [
-    { name: "Home", href: "/" },
     { name: "Projects", href: "/projects" },
     { name: "Skills", href: "/skills" },
     { name: "Experience", href: "/work-experience" },
@@ -42,7 +41,7 @@ export default function Navbar() {
           <div className="flex items-center space-x-2">
             <Code className="h-8 w-8 text-blue-500" />
             <span className="text-xl font-bold text-[var(--text-primary)] dark:text-white">
-              Dev<span className="text-blue-500">Portfolio</span>
+              <Link href="/" className="text-blue-500">Portfolio</Link>
             </span>
           </div>
 
