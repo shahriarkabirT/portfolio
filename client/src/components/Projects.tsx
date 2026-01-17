@@ -222,8 +222,8 @@ export default function ProjectsSection({ limit }: { limit?: number }) {
     filter === "all"
       ? projects.slice(0, limit || projects.length) // Apply the limit here
       : projects
-          .filter((project) => project.category === filter)
-          .slice(0, limit || projects.length);
+        .filter((project) => project.category === filter)
+        .slice(0, limit || projects.length);
 
   return (
     <section
@@ -248,31 +248,28 @@ export default function ProjectsSection({ limit }: { limit?: number }) {
         <div className="flex flex-wrap justify-center gap-4 mb-12">
           <button
             onClick={() => setFilter("all")}
-            className={`px-6 py-2 rounded-full transition-colors duration-300 ${
-              filter === "all"
+            className={`px-6 py-2 rounded-full transition-colors duration-300 ${filter === "all"
                 ? "bg-blue-600 text-white"
                 : "bg-gray-100 text-gray-700 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700"
-            }`}
+              }`}
           >
             All Projects
           </button>
           <button
             onClick={() => setFilter("web")}
-            className={`px-6 py-2 rounded-full transition-colors duration-300 ${
-              filter === "web"
+            className={`px-6 py-2 rounded-full transition-colors duration-300 ${filter === "web"
                 ? "bg-blue-600 text-white"
                 : "bg-gray-100 text-gray-700 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700"
-            }`}
+              }`}
           >
             Web Development
           </button>
           <button
             onClick={() => setFilter("ai")}
-            className={`px-6 py-2 rounded-full transition-colors duration-300 ${
-              filter === "ai"
+            className={`px-6 py-2 rounded-full transition-colors duration-300 ${filter === "ai"
                 ? "bg-blue-600 text-white"
                 : "bg-gray-100 text-gray-700 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700"
-            }`}
+              }`}
           >
             AI Projects
           </button>
@@ -284,6 +281,26 @@ export default function ProjectsSection({ limit }: { limit?: number }) {
             <ProjectCard key={project.id} project={project} />
           ))}
         </div>
+
+        {/* See More Projects Button */}
+        {limit && (
+          <div className="mt-16 flex justify-center">
+            <a
+              href="/projects"
+              className="group inline-flex items-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white font-semibold text-lg shadow-lg shadow-purple-500/25 hover:shadow-xl hover:shadow-purple-500/40 transition-all duration-300 hover:scale-105"
+            >
+              <span>See More Projects</span>
+              <svg
+                className="w-5 h-5 transform group-hover:translate-x-1 transition-transform duration-300"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </a>
+          </div>
+        )}
       </div>
     </section>
   );
@@ -346,9 +363,8 @@ function ProjectCard({ project }: { project: Project }) {
         <p className="text-gray-600 dark:text-gray-400 text-sm mb-4">
           {showDetails
             ? project.description
-            : `${project.description.substring(0, 100)}${
-                project.description.length > 100 ? "..." : ""
-              }`}
+            : `${project.description.substring(0, 100)}${project.description.length > 100 ? "..." : ""
+            }`}
         </p>
 
         {/* Project Features */}
