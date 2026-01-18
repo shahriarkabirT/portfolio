@@ -10,10 +10,10 @@ export default function HeroSection() {
   const [typingSpeed, setTypingSpeed] = useState(100);
 
   const phrases = [
+    "Web Application Expert",
+    "Website Specialist",
     "Full Stack Developer",
     "DevOps Engineer",
-    "App Developer",
-    "Web Developer",
     "Problem Solver",
   ];
 
@@ -57,7 +57,7 @@ export default function HeroSection() {
   return (
     <section
       id="home"
-      className="relative min-h-screen py-16 overflow-hidden bg-[var(--background)] text-[var(--foreground)]"
+      className="relative min-h-screen py-6 overflow-hidden bg-[var(--background)] text-[var(--foreground)]"
     >
       {/* Subtle background pattern for depth */}
       <div className="absolute inset-0 bg-gradient-to-br from-transparent via-blue-50/30 to-transparent dark:from-transparent dark:via-blue-900/10 dark:to-transparent" />
@@ -99,11 +99,14 @@ export default function HeroSection() {
             </div>
 
             {/* Professional description */}
-            <div className="space-y-6 mb-10">
+            <div className="space-y-0 mb-10">
               <p className="text-lg lg:text-xl text-[var(--text-secondary)] leading-relaxed max-w-2xl">
-                Passionate software engineer with expertise in modern web
-                technologies. I create scalable, user-focused solutions that
-                drive business growth and innovation.
+                I architect high-performance <span className="text-[var(--text-primary)] font-semibold">Websites</span> and{" "}
+                <span className="text-[var(--text-primary)] font-semibold">Web Applications</span> designed for scale.
+                From <span className="text-[var(--text-primary)] font-semibold">Strategic Discovery</span> and
+                {" "}<span className="text-[var(--text-primary)] font-semibold">Requirement Gathering</span> to
+                {" "}<span className="text-[var(--text-primary)] font-semibold">Production-Grade Deployment</span>,
+                I provide comprehensive, end-to-end technical leadership for your projects.
               </p>
 
               {/* Professional stats */}
@@ -201,7 +204,7 @@ export default function HeroSection() {
                 {/* Professional tech badges */}
                 <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2">
                   <div className="flex space-x-4">
-                   
+
                   </div>
                 </div>
               </div>

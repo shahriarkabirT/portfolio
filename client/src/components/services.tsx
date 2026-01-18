@@ -70,8 +70,7 @@ const Services = () => {
             </span>
           </h2>
           <p className="text-[var(--text-secondary)] dark:text-gray-400 max-w-3xl mx-auto">
-            We provide end-to-end technology solutions to empower your business
-            with cutting-edge web, mobile, and cloud services.
+            I deliver robust digital ecosystems for <span className="text-[var(--text-primary)] font-semibold">Websites</span> and <span className="text-[var(--text-primary)] font-semibold">Web Applications</span>, leading the entire execution lifecycle from <span className="text-[var(--text-primary)] font-semibold">Strategic Discovery</span> to <span className="text-[var(--text-primary)] font-semibold">Production-Grade Deployment</span>.
           </p>
         </motion.div>
 
