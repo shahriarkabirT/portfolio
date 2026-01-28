@@ -23,17 +23,17 @@ export default function Navbar() {
     { name: "Experience", href: "/work-experience" },
     { name: "Blog", href: "/blog" },
     { name: "Contact", href: "/contact" },
-    { name: "My Services", href: "/services" },
+    { name: "Journey", href: "/journey" },
+    { name: "Services", href: "/services" },
     { name: "About Me", href: "/about" },
   ];
 
   return (
     <nav
-      className={`fixed w-full z-20 transition-all duration-300 backdrop-blur ${
-        scrolled
+      className={`fixed w-full z-20 transition-all duration-300 backdrop-blur ${scrolled
           ? "bg-[var(--nav-bg-scrolled)] border-b border-[var(--border)] shadow-lg"
           : "bg-[var(--nav-bg)]"
-      }`}
+        }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
@@ -53,11 +53,10 @@ export default function Navbar() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className={` py-1 text-sm font-medium transition-colors duration-200 ${
-                    isActive
+                  className={` py-1 text-sm font-medium transition-colors duration-200 ${isActive
                       ? "text-blue-600 dark:text-blue-400 font-semibold border-b-2 border-blue-600 dark:border-blue-400"
                       : "text-[var(--text-secondary)] hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-500"
-                  }`}
+                    }`}
                 >
                   {item.name}
                 </Link>
@@ -127,11 +126,10 @@ export default function Navbar() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className={`block px-3 py-2 rounded-md text-base font-medium transition-colors ${
-                    isActive
+                  className={`block px-3 py-2 rounded-md text-base font-medium transition-colors ${isActive
                       ? "bg-blue-600 text-white"
                       : "text-gray-300 hover:bg-gray-700 hover:text-white"
-                  }`}
+                    }`}
                   onClick={() => setIsOpen(false)}
                 >
                   {item.name}
