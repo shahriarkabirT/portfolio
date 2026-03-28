@@ -57,7 +57,7 @@ export default function HeroSection() {
   return (
     <section
       id="home"
-      className="relative min-h-screen py-6 overflow-hidden bg-[var(--background)] text-[var(--foreground)]"
+      className="relative min-h-screen pt-20 pb-6 overflow-hidden bg-[var(--background)] text-[var(--foreground)]"
     >
       {/* Subtle background pattern for depth */}
       <div className="absolute inset-0 bg-gradient-to-br from-transparent via-blue-50/30 to-transparent dark:from-transparent dark:via-blue-900/10 dark:to-transparent" />
