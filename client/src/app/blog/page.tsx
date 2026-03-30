@@ -3,6 +3,18 @@ import BlogCard from "@/components/BlogCard";
 export default function TechBlogPage() {
   const blogPosts = [
     {
+      id: 13,
+      title: "Next.js vs Laravel: আপনার Business-এর জন্য কোনটি Best?",
+      description:
+        "Speed, SEO, scalability, cost — সব দিক থেকে Next.js ও Laravel-এর comprehensive comparison। জানুন কোন framework আপনার project-এর জন্য perfect।",
+      category: "Framework",
+      readTime: "12 min read",
+      date: "Mar 30, 2026",
+      image:
+        "https://images.unsplash.com/photo-1627398242454-45a1465c2479?w=400&h=250&fit=crop",
+      link: "/blog/nextjs-vs-laravel",
+    },
+    {
       id: 1,
       title: "The Complete Guide to VPS Hosting for MERN stack project",
       description: "Learn how to host you mern with next js website in the vps",
@@ -219,6 +231,7 @@ export default function TechBlogPage() {
               "Architecture",
               "Performance",
               "API Development",
+              "Framework",
             ].map((category, index) => (
               <div
                 key={index}
