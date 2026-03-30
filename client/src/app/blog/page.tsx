@@ -1,4 +1,5 @@
 import BlogCard from "@/components/BlogCard";
+import Link from "next/link";
 
 export default function TechBlogPage() {
   const blogPosts = [
@@ -201,12 +202,12 @@ export default function TechBlogPage() {
             <h2 className="text-3xl font-bold text-[var(--text-primary)] dark:text-white">
               Latest Articles
             </h2>
-            <a
+            <Link
               href="#"
               className="text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors text-sm"
             >
               View All →
-            </a>
+            </Link>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

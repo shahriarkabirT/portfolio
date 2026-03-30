@@ -1,6 +1,6 @@
 "use client";
 
-import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 interface BlogPost {
   id: number;
@@ -19,8 +19,6 @@ interface BlogCardProps {
 }
 
 export default function BlogCard({ post, isFeatured = false }: BlogCardProps) {
-  const router = useRouter();
-
   if (isFeatured) {
     return (
       <div className="bg-white dark:bg-gradient-to-br dark:from-gray-800 dark:to-gray-900 rounded-2xl overflow-hidden shadow-2xl">
@@ -47,12 +45,12 @@ export default function BlogCard({ post, isFeatured = false }: BlogCardProps) {
               <span className="mx-3">•</span>
               <span>{post.readTime}</span>
             </div>
-            <button
-              onClick={() => router.push(post.link)}
+            <Link
+              href={post.link}
               className="bg-black text-white dark:bg-white dark:text-black px-8 py-3 rounded-lg font-semibold hover:opacity-95 transition-colors w-fit"
             >
               Read Full Article →
-            </button>
+            </Link>
           </div>
         </div>
       </div>
@@ -60,9 +58,9 @@ export default function BlogCard({ post, isFeatured = false }: BlogCardProps) {
   }
 
   return (
-    <div
-      onClick={() => router.push(post.link)}
-      className="bg-white dark:bg-gradient-to-br dark:from-gray-800 dark:to-gray-900 rounded-xl overflow-hidden shadow-lg cursor-pointer transition-all duration-300 hover:shadow-2xl hover:scale-105 border border-gray-200 dark:border-gray-800"
+    <Link
+      href={post.link}
+      className="bg-white dark:bg-gradient-to-br dark:from-gray-800 dark:to-gray-900 rounded-xl overflow-hidden shadow-lg cursor-pointer transition-all duration-300 hover:shadow-2xl hover:scale-105 border border-gray-200 dark:border-gray-800 block"
     >
       <div className="h-48 overflow-hidden relative">
         <img
@@ -100,6 +98,6 @@ export default function BlogCard({ post, isFeatured = false }: BlogCardProps) {
           </p>
         </div>
       </div>
-    </div>
+    </Link>
   );
 }
