@@ -4,6 +4,18 @@ import Link from "next/link";
 export default function TechBlogPage() {
   const blogPosts = [
     {
+      id: 14,
+      title: "Increase Your Performance in Next.js App: Advanced Optimization Techniques",
+      description:
+        "Actionable, advanced strategies to drastically reduce load times, improve Core Web Vitals, and optimize your Next.js application bundle size.",
+      category: "Performance",
+      readTime: "10 min read",
+      date: "April 4, 2026",
+      image:
+        "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=400&h=250&fit=crop",
+      link: "/blog/nextjs-performance-optimization",
+    },
+    {
       id: 13,
       title: "Next.js vs Laravel: আপনার Business-এর জন্য কোনটি Best?",
       description:

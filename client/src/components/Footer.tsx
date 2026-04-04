@@ -143,7 +143,7 @@ const Footer = () => {
             <ul className="space-y-2">
               <li>
                 <a
-                  href="https://shahriarkabir.vercel.app/"
+                  href="https://shahriarkabir.dev/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-[var(--text-primary)] transition-colors text-[var(--text-secondary)] dark:text-gray-300"
@@ -153,12 +153,12 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="https://urbargent.vercel.app/"
+                  href="https://myfinance.bd/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-[var(--text-primary)] transition-colors text-[var(--text-secondary)] dark:text-gray-300"
                 >
-                  UrbarGent
+                  Finance App
                 </a>
               </li>
               <li>
