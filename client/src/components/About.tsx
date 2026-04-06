@@ -49,7 +49,7 @@ const AboutMe = () => {
                 {/* Replace with your actual photo */}
                 <div className="w-full h-full bg-gray-100 dark:bg-gray-700 flex items-center justify-center text-gray-500 dark:text-gray-400">
                   <span className="text-sm">
-                    <img src="shahriar.png" alt=""></img>
+                    <img src="shahriar.jpg" alt=""></img>
                   </span>
                 </div>
               </div>
