@@ -4,6 +4,18 @@ import Link from "next/link";
 export default function TechBlogPage() {
   const blogPosts = [
     {
+      id: 15,
+      title: "How to Host Multiple Clients on a Single VPS Using LXC Containers",
+      description:
+        "One public IP, multiple isolated clients, zero conflicts. A full guide to LXC containers, Nginx reverse proxying, isolated MongoDB databases, and per-client GitHub SSH — everything you need to run a multi-tenant VPS on a budget.",
+      category: "VPS Hosting",
+      readTime: "20 min read",
+      date: "April 13, 2026",
+      image:
+        "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=250&fit=crop",
+      link: "/blog/vps/lxc-multi-client-hosting",
+    },
+    {
       id: 14,
       title: "Increase Your Performance in Next.js App: Advanced Optimization Techniques",
       description:
