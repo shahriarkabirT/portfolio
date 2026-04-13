@@ -4,6 +4,18 @@ import Link from "next/link";
 export default function TechBlogPage() {
   const blogPosts = [
     {
+      id: 16,
+      title: "Stop typing your GitHub password on every push",
+      description:
+        "GitHub has deprecated plain password auth, and pasting tokens is tedious. Learn how to set up SSH authentication to secure your Git workflow and stop the constant credential prompts.",
+      category: "Git & Linux",
+      readTime: "2 min read",
+      date: "April 14, 2026",
+      image:
+        "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=400&h=250&fit=crop",
+      link: "/blog/git/stop-typing-github-password",
+    },
+    {
       id: 15,
       title: "How to Host Multiple Clients on a Single VPS Using LXC Containers",
       description:

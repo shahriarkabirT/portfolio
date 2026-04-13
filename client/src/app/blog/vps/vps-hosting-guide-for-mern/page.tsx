@@ -42,20 +42,22 @@ export default function VPSHostingTutorial() {
       icon: "🍃",
       commands: [
         {
-          description: "Import MongoDB public GPG key",
-          code: "curl -fsSL https://www.mongodb.org/static/pgp/server-8.0.asc | \\\nsudo gpg -o /usr/share/keyrings/mongodb-server-8.0.gpg --dearmor",
-        },
-        {
-          description: "Add MongoDB repository",
-          code: 'echo "deb [ arch=amd64,arm64 signed-by=/usr/share/keyrings/mongodb-server-8.0.gpg ] https://repo.mongodb.org/apt/ubuntu jammy/mongodb-org/8.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-8.0.list',
-        },
-        {
-          description: "Install MongoDB",
-          code: "sudo apt-get update\nsudo apt-get install -y mongodb-org",
-        },
-        {
-          description: "Start and enable MongoDB",
-          code: "sudo systemctl start mongod\nsudo systemctl enable mongod\nsudo systemctl status mongod",
+          description: (
+            <span>
+              Please follow the{" "}
+              <a
+                href="https://www.mongodb.com/docs/v8.0/tutorial/install-mongodb-on-ubuntu/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-600 dark:text-blue-400 font-semibold hover:underline inline-flex items-center gap-1"
+              >
+                Official MongoDB Installation Guide
+                <ExternalLink className="w-4 h-4" />
+              </a>
+              . If you are using a version or OS other than Ubuntu, please search Google for the specific installation steps for your system.
+            </span>
+          ) as any,
+          code: "",
         },
       ],
     },
