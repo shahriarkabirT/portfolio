@@ -4,6 +4,18 @@ import Link from "next/link";
 export default function TechBlogPage() {
   const blogPosts = [
     {
+      id: 17,
+      title: "MongoDB Setup on Ubuntu 24.04 & Next.js Integration",
+      description:
+        "Complete secure procedure to install MongoDB 8.0 on Ubuntu 24.04, resolve configuration crashes, implement isolated database users, secure standard ports via UFW firewalls, and connect a robust Next.js client.",
+      category: "VPS Hosting",
+      readTime: "8 min read",
+      date: "May 19, 2026",
+      image:
+        "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?w=400&h=250&fit=crop",
+      link: "/blog/vps/mongodb-setup-nextjs-integration",
+    },
+    {
       id: 16,
       title: "Stop typing your GitHub password on every push",
       description:
