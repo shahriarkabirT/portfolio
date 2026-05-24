@@ -242,6 +242,39 @@ export async function POST(req) {
       },
     ],
   },
+  {
+    id: 8,
+    title: "Troubleshooting: Connection Timeouts",
+    summary: "Timeout means the firewall is blocking the connection. Let's fix it.",
+    note: "If ufw is inactive, check if the hosting provider has a firewall. Many VPS providers (Hostinger, DigitalOcean, Hetzner, Vultr etc.) have a separate firewall in their control panel that blocks ports regardless of ufw. You need to open port 27017 there too.",
+    blocks: [
+      {
+        label: "Check firewall status",
+        code: `sudo ufw status verbose`,
+      },
+      {
+        label: "First get your PC's public IP — run this on your local machine:",
+        code: `curl -4 ifconfig.me`,
+      },
+      {
+        label: "Then on the VPS (Allow your PC's IP):",
+        code: `sudo ufw allow from YOUR_PC_IP to any port 27017
+sudo ufw reload
+sudo ufw status`,
+      },
+      {
+        label: "Quick test — temporarily allow all (just to confirm it's the firewall)",
+        code: `sudo ufw allow 27017
+sudo ufw reload`,
+      },
+      {
+        label: "Then try Compass again. If it connects, lock it back down to your IP only:",
+        code: `sudo ufw delete allow 27017
+sudo ufw allow from YOUR_PC_IP to any port 27017
+sudo ufw reload`,
+      },
+    ],
+  },
 ];
 
 interface CopyButtonProps {
