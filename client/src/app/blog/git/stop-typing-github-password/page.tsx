@@ -28,14 +28,26 @@ export default function GitHubSSHGuide() {
     },
     {
       id: 3,
-      title: "Go to GitHub → Settings → SSH and GPG keys → New SSH key, paste your key, and save.",
+      title: "Authorize your public key on a VPS server (for passwordless SSH login):",
       icon: "3",
-      commands: [],
+      commands: [
+        {
+          description:
+            "On the server — append your public key to the authorized_keys file, then lock down permissions.",
+          code: `cat ~/.ssh/id_ed25519.pub >> ~/.ssh/authorized_keys\nchmod 600 ~/.ssh/authorized_keys`,
+        },
+      ],
     },
     {
       id: 4,
-      title: "Test that it works:",
+      title: "Go to GitHub → Settings → SSH and GPG keys → New SSH key, paste your key, and save.",
       icon: "4",
+      commands: [],
+    },
+    {
+      id: 5,
+      title: "Test that it works:",
+      icon: "5",
       commands: [
         {
           description: '"Hi username! You\'ve successfully authenticated..."',
@@ -44,9 +56,9 @@ export default function GitHubSSHGuide() {
       ],
     },
     {
-      id: 5,
+      id: 6,
       title: "Switch existing repos from HTTPS to SSH:",
-      icon: "5",
+      icon: "6",
       commands: [
         {
           description: "Done. No more credential prompts — ever.",

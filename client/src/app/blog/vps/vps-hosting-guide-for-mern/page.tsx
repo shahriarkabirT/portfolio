@@ -132,8 +132,12 @@ export default function VPSHostingTutorial() {
           code: 'pm2 start npm --name "backend-app" -- start',
         },
         {
-          description: "Save PM2 configuration",
-          code: "pm2 save\npm2 startup",
+          description: "Save PM2 process list — so it survives a reboot",
+          code: "pm2 save",
+        },
+        {
+          description: "Generate and enable the startup script — PM2 will now auto-start on system boot. Run the command it outputs (starts with 'sudo env PATH...')",
+          code: "pm2 startup",
         },
         {
           description: "Test your backend",
@@ -282,7 +286,15 @@ export default function VPSHostingTutorial() {
         },
         {
           description: "Start application with PM2",
-          code: "pm2 start ecosystem.config.js\npm2 save",
+          code: "pm2 start ecosystem.config.js",
+        },
+        {
+          description: "Save PM2 process list — persists across reboots",
+          code: "pm2 save",
+        },
+        {
+          description: "Register PM2 to auto-start on server reboot — copy and run the sudo command it outputs",
+          code: "pm2 startup",
         },
         {
           description: "Check PM2 status",
