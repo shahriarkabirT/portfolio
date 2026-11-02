@@ -508,10 +508,10 @@ export default function MongoGuidePage() {
 const CSS = `
 .doc{--bg:#f6f7f5;--fg:#1d2522;--mut:#5b6762;--line:#d9dfdb;--acc:#0f6b5c;--card:#fff;--code:#14201d;--codefg:#e3efe9;
 --note:#e7f1ee;--warnbg:#fbeee6;--warn:#a1471b;
-display:grid;grid-template-columns:260px minmax(0,1fr);min-height:100vh;background:var(--bg);color:var(--fg);
+display:grid;grid-template-columns:260px minmax(0,1fr);min-height:100vh;padding-top:64px;background:var(--bg);color:var(--fg);
 font:16px/1.65 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
 @media (prefers-color-scheme:dark){.doc{--bg:#0f1514;--fg:#e4ebe8;--mut:#9aa8a2;--line:#27322f;--acc:#4fc0a8;--card:#151d1b;--code:#0a100f;--codefg:#dcebe4;--note:#16302b;--warnbg:#33201a;--warn:#f0a77f}}
-.doc nav{position:sticky;top:0;align-self:start;height:100vh;overflow:auto;padding:28px 20px;border-right:1px solid var(--line)}
+.doc nav{position:sticky;top:64px;align-self:start;height:calc(100vh - 64px);overflow:auto;padding:28px 20px;border-right:1px solid var(--line)}
 .doc nav strong{display:block;font-size:15px;margin-bottom:14px}
 .doc nav ol{list-style:none;margin:0;padding:0}
 .doc nav li{margin:0}

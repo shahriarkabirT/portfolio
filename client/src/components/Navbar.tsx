@@ -103,9 +103,15 @@ export default function Navbar() {
   /* ── Scroll listener ────────────────────────────────────────────────── */
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
+    handleScroll();
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  useEffect(() => {
+    setMobileOpen(false);
+    setMobileServicesOpen(false);
+  }, [pathname]);
 
   /* ── Lock body scroll when mobile menu is open ──────────────────────── */
   useEffect(() => {
@@ -258,7 +264,10 @@ export default function Navbar() {
 
               {/* Other Nav Links */}
               {navLinks.map((link) => {
-                const isActive = pathname === link.href;
+                const isActive =
+                  link.href === "/blog"
+                    ? pathname.startsWith("/blog")
+                    : pathname === link.href || pathname.startsWith(`${link.href}/`);
                 return (
                   <Link
                     key={link.name}
@@ -400,7 +409,10 @@ export default function Navbar() {
 
               {/* Other Links */}
               {navLinks.map((link) => {
-                const isActive = pathname === link.href;
+                const isActive =
+                  link.href === "/blog"
+                    ? pathname.startsWith("/blog")
+                    : pathname === link.href || pathname.startsWith(`${link.href}/`);
                 return (
                   <Link
                     key={link.name}
