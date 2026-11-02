@@ -4,6 +4,18 @@ import Link from "next/link";
 export default function TechBlogPage() {
   const blogPosts = [
     {
+      id: 18,
+      title: "Connect, Back Up and Restore MongoDB on a VPS",
+      description:
+        "A complete VPS-to-Mac guide for connecting with MongoDB Compass, creating secure backups, restoring locally, automating daily dumps, and recovering everything after a server failure.",
+      category: "VPS Hosting",
+      readTime: "15 min read",
+      date: "Nov 3, 2026",
+      image:
+        "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?w=400&h=250&fit=crop",
+      link: "/blog/vps/mongodb-backup-restore",
+    },
+    {
       id: 17,
       title: "MongoDB Setup on Ubuntu 24.04 & Next.js Integration",
       description:
